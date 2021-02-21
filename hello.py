@@ -1,1 +1,1 @@
-print("Sup.")
+print("Yo mama.")
