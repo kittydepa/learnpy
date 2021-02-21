@@ -145,7 +145,7 @@ class Cave(Room):
 
 class RescueMary(MiniGame):
 
-    def enter(self):
+    def enter(self) -> str:
         print(dedent("""
               You enter a room and see Mary being held down by a mob of ghouls,
               with a little bit of her life draining each minute. You can either
@@ -155,7 +155,9 @@ class RescueMary(MiniGame):
 
         if "one" in action.lower() or "attack" in action.lower():
             print("You fight them, and win. Woohooo!")
-            super(RescueMary, self).enter()
+            minigame = super(RescueMary, self)
+            x = minigame.enter()
+            return x
 
         elif "charge" in action.lower():
             print("Damn, well that did not go as expected. They clobbered you.")
