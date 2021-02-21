@@ -34,7 +34,7 @@ class Game:
         current_event.enter()
 
 # The mini-game. ALl characters will end up here regardless.
-class MiniGame: #?????
+class MiniGame:
 
     def enter(self):
         print(dedent("""
@@ -63,7 +63,7 @@ class MiniGame: #?????
 # First Room - Intro + Pick a character
 class Characters(Room):
 
-    def enter(self):
+    def enter(self) -> str:
             print("                                 ")
             print("Welcome to Kitty's Version of Children of Morta, and adventure RPG.")
             print(dedent("""
@@ -213,22 +213,24 @@ class HelpGrandma(MiniGame):
 
 class PreCave(MiniGame):
 
-    def enter(self):
+    def enter(self) -> str:
         print(dedent("""
-              Some crap here. Cave"""))
+              Omg u r in a cave. You can either 1 or 2. What do you choose?
+              """))
+        
+        choice = input("> ")
 
-        if choice == something:
+        if choice == "1":
+            print("Omg you chose 1. You can go on.")
+            return 'cave'
+
+        elif choice == "2": 
             print("something")
-            return '________'
-
-        elif choice == something: # something:
-            print("something")
-            return '___________'
-
+            return 'death'
 
         else:
-            print("something")
-        return 'finished'
+            print("... the fuck does that mean? Try again")
+        return 'fight'
 
 # Dict with all events, and the code for how to go from 1 room to the next
 class Events:
