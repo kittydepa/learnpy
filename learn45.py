@@ -126,16 +126,21 @@ class Finished(Room):
 # Everyone needs to go here. Last stop before 'winning; the game'
 class Cave(Room):
 
-    def enter(self):
+    def enter(self)  -> str:
             print(dedent("""
-                  Some crap here. Cave"""))
+                  You made it to the final level! The Cave. Time to defeat the
+                  Spider King. You have two options: either 1 or 2
+                  """))
+            
+            choice = input("> ")
 
-            if choice == something:
-                print("something")
+            if choice == "1":
+                print("Damn, you made it so far but did not make it in the end.")
+                print("You died.")
                 return 'death'
 
-            elif choice == something: # something:
-                print("something")
+            elif choice == "2": # something:
+                print("Spider King = defeated!")
                 return 'finished'
 
             else:
@@ -225,7 +230,7 @@ class PreCave(MiniGame):
             return 'cave'
 
         elif choice == "2": 
-            print("something")
+            print("Omg that was the wrong choice. Very bad. You died.")
             return 'death'
 
         else:
