@@ -3,34 +3,38 @@
 from sys import exit
 from random import randint
 from textwrap import dedent
+import typing
+
 #from file_name_raw import function_name
 # https://stackoverflow.com/questions/20309456/call-a-function-from-another-file
 
 
-class Room(object):
+class Room:
 
     def enter(self):
         print("---NA---")
         exit(1)
 
 # Setting up the games mechanisms, e.g. go to next room, start with Characters, etc.
-class Game(object):
+class Game:
 
     def __init__(self, quest):
         self.quest = quest
 
     def play(self):
         current_event = self.quest.character_selection()
+        print(f"DEBUG Current Event: {current_event}")
         last_event = self.quest.next_event('finished')
 
         while current_event != last_event:
+            print(f"DEBUG Current Event: {current_event}")
             next_event_name = current_event.enter()
             current_event = self.quest.next_event(next_event_name)
 
         current_event.enter()
 
 # The mini-game. ALl characters will end up here regardless.
-class MiniGame(object): #?????
+class MiniGame: #?????
 
     def enter(self):
         print(dedent("""
@@ -52,6 +56,9 @@ class MiniGame(object): #?????
         elif tile_choice == "3":
             print("You got the powerup! You are rewarded with... nothing!")
             return 'cave'
+        
+        else:
+            raise Exception("You done wrong.")
 
 # First Room - Intro + Pick a character
 class Characters(Room):
@@ -161,7 +168,7 @@ class RescueMary(MiniGame):
 
 class HelpGrandma(MiniGame):
 
-    def enter(self):
+    def enter(self) -> str:  # 1. Apply to all other enter functions. 
         print(dedent("""
               You see the special herb that Grandma Margaret needs for
               healing potions. However, the herb is surronded by hundreds
@@ -173,7 +180,7 @@ class HelpGrandma(MiniGame):
 
         action = input("> ")
 
-        if "freeze" in action.lower():
+        if "freeze" == action.lower().strip(): # Calling .strip on the result of the lower function  # Chained function call
             print(dedent("""
                   Well... that didn't go as expected. The spiders did freeze, but
                   not for long enough. You made your way to the herb but just as you
@@ -184,16 +191,22 @@ class HelpGrandma(MiniGame):
 
         elif "invisible" in action.lower():
             print(dedent("""
-                  You conjur up enough mana to be able to make yourself invisible.
+                  You conjure up enough mana to be able to make yourself invisible.
                   You treaded cautiously as you were not sure how long you could stay
                   in this state. Luckily, you were able to grab the herb and make it
                   back to safety just before you became visible again.
-                  You leave without a scratch. Nice work."""))
-            super(HelpGrandma, self).enter()
+                  You leave without a scratch. Nice work.
+                  """))
+            minigame = super(HelpGrandma, self)
+            x = minigame.enter() # AN UNNAMED VARiABLE WITHOUT THE X or RETURN!
+            return x # or return minigame.enter()   it's the same
+            # A recursive function.
 
         else:
             print("What? ... Try again.")
             return "grandma"
+        
+       # raise Exception("Function must return as the string.") # 
 
 
 class PreCave(MiniGame):
@@ -215,25 +228,24 @@ class PreCave(MiniGame):
             print("something")
         return 'finished'
 
-
 # Dict with all events, and the code for how to go from 1 room to the next
-class Events(object):
+class Events:
 
     events = {
-    'character': Characters(),
-    'mini_game': MiniGame(),
-    'mary': RescueMary(),
-    'grandma': HelpGrandma(),
-    'death': Death(),
-    'finished': Finished(),
-    'cave': Cave(),
-    'fight': PreCave(),
+        'character': Characters(),
+        'mini_game': MiniGame(),
+        'mary': RescueMary(),
+        'grandma': HelpGrandma(),
+        'death': Death(),
+        'finished': Finished(),
+        'cave': Cave(),
+        'fight': PreCave(),
     }
 
     def __init__(self, start_event):
         self.start_event = start_event
 
-    def next_event(start, event_name):
+    def next_event(self, event_name):
         val = Events.events.get(event_name)
         return val
 
