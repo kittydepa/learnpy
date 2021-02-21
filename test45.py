@@ -12,7 +12,7 @@ class Room(object):
     def enter(self):
         print("---NA---")
         exit(1)
-
+rwetewfhsdkjhfdkslhfj 
 
 # Setting up the games mechanisms, e.g. go to next room, start with Characters, etc.
 class Game(object):
