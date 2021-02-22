@@ -244,7 +244,9 @@ class PreCave(MiniGame):
                   jump in the air, surrounded by enemies, and attempt to 
                   throw a fan of knives and... You succeede!
                   """))
-            return 'cave'
+            minigame = super(PreCave, self)
+            x = minigame.enter()
+            return x
 
         elif "strike" == choice.lower().strip(): 
             print("Omg that was the wrong choice. Very bad. You died.")
