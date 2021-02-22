@@ -70,7 +70,7 @@ class Characters(Room):
 
     def enter(self) -> str:
             print("                                 ")
-            print("Welcome to Kitty's Version of Children of Morta, and adventure RPG.")
+            print("Welcome to Kitty's Version of Children of Morta, an adventure RPG.")
             print(dedent("""
                   ----------------------------------------------------------------
                   Now it's time to choose a character.
