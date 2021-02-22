@@ -12,4 +12,4 @@ class Eval:
             print("Awesome! Okay, bye")
         
         else:
-            print("Hmm... not sure how to interpret. Ok, bye.")
+            print("Hmm... not sure how to interpret. Was it good ot bad? Lol. Ok, bye.")
