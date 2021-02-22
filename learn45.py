@@ -37,6 +37,7 @@ class Game:
 class MiniGame:
 
     def enter(self):
+        print("--------------------------------Game of the Gods--------------------------------")
         print(dedent("""
               You enter a special room where three tiles lay before you.
               Stepping on one of the tiles will reward you with a powerup.
@@ -120,6 +121,7 @@ class Death(Room):
 class Finished(Room):
 
     def enter(self):
+        print("--------------------------------Victory!--------------------------------")
         print("You made it out in one piece!!! Good job.")
         exit(1)
 
@@ -127,6 +129,7 @@ class Finished(Room):
 class Cave(Room):
 
     def enter(self)  -> str:
+            print("---------------------------Cave of the Spider King---------------------------")
             print(dedent("""
                   You made it to the final level! The Cave. Time to defeat the
                   Spider King. You have two options: either 1 or 2
@@ -151,6 +154,7 @@ class Cave(Room):
 class RescueMary(MiniGame):
 
     def enter(self) -> str:
+        print("--------------------------------Rescue Mary--------------------------------")
         print(dedent("""
               You enter a room and see Mary being held down by a mob of ghouls,
               with a little bit of her life draining each minute. You can either
@@ -176,6 +180,7 @@ class RescueMary(MiniGame):
 class HelpGrandma(MiniGame):
 
     def enter(self) -> str:  # 1. Apply to all other enter functions. 
+        print("--------------------------------Help Grandma--------------------------------")
         print(dedent("""
               You see the special herb that Grandma Margaret needs for
               healing potions. However, the herb is surronded by hundreds
@@ -219,17 +224,29 @@ class HelpGrandma(MiniGame):
 class PreCave(MiniGame):
 
     def enter(self) -> str:
+        print("--------------------------------Cave 1--------------------------------")
         print(dedent("""
-              Omg u r in a cave. You can either 1 or 2. What do you choose?
+              You are in a cave and need to battle your way out. Inside
+              the cave where are dozens of demonic archers, all pointing
+              arrows at you! You have one of two options. You can either
+              use your *heavenly strike* to try to kill them all with a 
+              single blow, or you can attempt to *throw a fan of knives*
+              at them. Both of these attacks have a chance of killing them
+              all in one go, and of course, failing as well. You only get
+              one chance. What do you choose?
               """))
         
         choice = input("> ")
 
-        if choice == "1":
-            print("Omg you chose 1. You can go on.")
+        if "knives" == choice.lower().strip():
+            print(dedent("""
+                  You rush towards the epicenter of all of the chaos. You
+                  jump in the air, surrounded by enemies, and attempt to 
+                  throw a fan of knives and... You succeede!
+                  """))
             return 'cave'
 
-        elif choice == "2": 
+        elif "strike" == choice.lower().strip(): 
             print("Omg that was the wrong choice. Very bad. You died.")
             return 'death'
 
