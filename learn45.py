@@ -44,26 +44,30 @@ class MiniGame:
 
         tile_choice = input("> ")
 
-        if tile_choice == "1":
+        if "1" in tile_choice.strip():
             time.sleep(1)
             print("That was not the correct tile. You lose half of your health.")
             time.sleep(1)
             return 'death'
 
-        elif tile_choice == "2":
+        elif "2" in tile_choice.strip():
             time.sleep(1)
             print("That was not the correct tile. A giant Oger appears and kills you with a single blow.")
             time.sleep(1)
             return 'death'
 
-        elif tile_choice == "3":
+        elif "3" in tile_choice.strip():
             time.sleep(1)
             print("You got the powerup! You are rewarded with... nothing!")
             time.sleep(1)
             return 'cave'
         
         else:
-            raise Exception("You done wrong.")
+            print("Huh? I didn't understand that. Try again.")
+            time.sleep(1)
+            return 'mini_game'
+            #raise Exception("You done wrong.")
+            
 
 # First Room - Intro + Pick a character
 class Characters(Room):
