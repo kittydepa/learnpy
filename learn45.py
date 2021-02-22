@@ -254,7 +254,7 @@ class PreCave(MiniGame):
               the cave where are dozens of demonic archers, all pointing
               arrows at you! You have one of two options. You can either
               use your *heavenly strike* to try to kill them all with a 
-              single blow, or you can attempt to *throw a fan of knives*
+              single blow, or you can attempt to throw a fan of *knives*
               at them. Both of these attacks have a chance of killing them
               all in one go, and of course, failing as well. You only get
               one chance. What do you choose?
@@ -273,7 +273,7 @@ class PreCave(MiniGame):
             x = minigame.enter()
             return x
 
-        elif "strike" == choice.lower().strip():
+        elif "heavenly strike" == choice.lower().strip():
             time.sleep(1) 
             print("Omg that was the wrong choice. Very bad. You died.")
             return 'death'
