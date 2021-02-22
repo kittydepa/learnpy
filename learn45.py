@@ -1,14 +1,8 @@
-#import characters from  (character file)
-
 from sys import exit
 from random import randint
 from textwrap import dedent
 import typing
-from charms import Eval
-
-#from file_name_raw import function_name
-# https://stackoverflow.com/questions/20309456/call-a-function-from-another-file
-
+from charms import Eval  # Importing a function from another file
 
 class Room:
 
@@ -24,11 +18,11 @@ class Game:
 
     def play(self):
         current_event = self.quest.character_selection()
-        print(f"DEBUG Current Event: {current_event}")
+        #print(f"DEBUG Current Event: {current_event}")
         last_event = self.quest.next_event('finished')
 
         while current_event != last_event:
-            print(f"DEBUG Current Event: {current_event}")
+            #print(f"DEBUG Current Event: {current_event}")
             next_event_name = current_event.enter()
             current_event = self.quest.next_event(next_event_name)
 
@@ -38,6 +32,7 @@ class Game:
 class MiniGame:
 
     def enter(self):
+        print(" ")
         print("--------------------------------Game of the Gods--------------------------------")
         print(dedent("""
               You enter a special room where three tiles lay before you.
@@ -122,7 +117,8 @@ class Death(Room):
 class Finished(Room):
 
     def enter(self):
-        print("--------------------------------Victory!--------------------------------")
+        print(" ")
+        print("------------------------------Victory!--------------------------------")
         print("You made it out in one piece!!! Good job.")
         x = Eval()
         return x
@@ -131,6 +127,7 @@ class Finished(Room):
 class Cave(Room):
 
     def enter(self)  -> str:
+            print(" ")
             print("---------------------------Cave of the Spider King---------------------------")
             print(dedent("""
                   You made it to the final level! The Cave. Time to defeat the
@@ -156,6 +153,7 @@ class Cave(Room):
 class RescueMary(MiniGame):
 
     def enter(self) -> str:
+        print(" ")
         print("--------------------------------Rescue Mary--------------------------------")
         print(dedent("""
               You enter a room and see Mary being held down by a mob of ghouls,
@@ -182,6 +180,7 @@ class RescueMary(MiniGame):
 class HelpGrandma(MiniGame):
 
     def enter(self) -> str:  # 1. Apply to all other enter functions. 
+        print(" ")
         print("--------------------------------Help Grandma--------------------------------")
         print(dedent("""
               You see the special herb that Grandma Margaret needs for
@@ -226,6 +225,7 @@ class HelpGrandma(MiniGame):
 class PreCave(MiniGame):
 
     def enter(self) -> str:
+        print(" ")
         print("--------------------------------Cave 1--------------------------------")
         print(dedent("""
               You are in a cave and need to battle your way out. Inside
