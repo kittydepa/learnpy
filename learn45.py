@@ -215,7 +215,7 @@ class HelpGrandma(MiniGame):
 
         action = input("> ")
 
-        if "freeze" == action.lower().strip(): # Calling .strip on the result of the lower function  # Chained function call
+        if "freeze" in action.lower().strip(): # Calling .strip on the result of the lower function  # Chained function call
             time.sleep(1)
             print(dedent("""
                   Well... that didn't go as expected. The spiders did freeze, but
@@ -266,7 +266,7 @@ class PreCave(MiniGame):
         
         choice = input("> ")
 
-        if "knives" == choice.lower().strip():
+        if "knives" in choice.lower().strip():
             time.sleep(1)
             print(dedent("""
                   You rush towards the epicenter of all of the chaos. You
@@ -277,7 +277,7 @@ class PreCave(MiniGame):
             x = minigame.enter()
             return x
 
-        elif "heavenly strike" == choice.lower().strip():
+        elif "heavenly strike" in choice.lower().strip():
             time.sleep(1) 
             print("Omg that was the wrong choice. Very bad. You died.")
             return 'death'
