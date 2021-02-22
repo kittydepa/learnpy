@@ -4,6 +4,7 @@ from sys import exit
 from random import randint
 from textwrap import dedent
 import typing
+from charms import Eval
 
 #from file_name_raw import function_name
 # https://stackoverflow.com/questions/20309456/call-a-function-from-another-file
@@ -123,7 +124,8 @@ class Finished(Room):
     def enter(self):
         print("--------------------------------Victory!--------------------------------")
         print("You made it out in one piece!!! Good job.")
-        exit(1)
+        x = Eval()
+        return x
 
 # Everyone needs to go here. Last stop before 'winning; the game'
 class Cave(Room):
