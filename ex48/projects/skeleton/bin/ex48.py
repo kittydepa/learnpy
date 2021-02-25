@@ -9,11 +9,12 @@ class Numbers:
 
 class UserInput:
 
-    lexicon = {
-        'directions': ['north', 'south', 'east', 'west'],
-        'verbs': ['go', 'stop', 'kill', 'eat'],
-        'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
-        'nouns': ['door', 'bear', 'princess', 'cabinet'],
-        'numbers': Numbers(),
-    }
-
+    def lexicon(self):
+        x_lexicon = {
+                'directions': ['north', 'south', 'east', 'west'],
+                'verbs': ['go', 'stop', 'kill', 'eat'],
+                'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
+                'nouns': ['door', 'bear', 'princess', 'cabinet'],
+                'numbers': Numbers(),
+            }
+        return x_lexicon
