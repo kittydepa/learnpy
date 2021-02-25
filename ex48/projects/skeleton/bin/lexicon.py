@@ -1,0 +1,5 @@
+class UserInput:
+
+    lexicon = {
+        
+    }
