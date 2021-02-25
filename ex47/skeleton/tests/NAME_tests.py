@@ -1,11 +1,3 @@
-from nose.tools import *
-import NAME
+import pytest
+from ex47.game import Room
 
-def setup():
-    print("SETUP!")
-
-def teardown():
-    print("TEAR DOWN!")
-
-def test_basic():
-    print("I RAN!")
