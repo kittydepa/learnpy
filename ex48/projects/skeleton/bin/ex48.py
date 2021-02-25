@@ -9,7 +9,8 @@ class Numbers:
 
 class UserInput:
 
-    def lexicon(self):
+    def lexicon(self, words):
+        self.words = words
         x_lexicon = {
                 'directions': ['north', 'south', 'east', 'west'],
                 'verbs': ['go', 'stop', 'kill', 'eat'],
