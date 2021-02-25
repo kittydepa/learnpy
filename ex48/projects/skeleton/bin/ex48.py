@@ -1,3 +1,20 @@
+"""
+# Base stuff
+
+stuff = input('> ')
+words = stuff.split()
+
+
+# Lexicon Tuples
+
+first_word = ('verbä', 'go')
+second _word = ('direction', 'north')
+third_word = ('direction', 'west')
+
+
+"""
+
+
 class Numbers:
 
     def convert_number(self, s):
