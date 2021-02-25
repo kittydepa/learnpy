@@ -9,8 +9,7 @@ class Numbers:
 
 class UserInput:
 
-    def lexicon(self, words):
-        self.words = words
+    def lexicon(self):
         x_lexicon = {
                 'directions': ['north', 'south', 'east', 'west'],
                 'verbs': ['go', 'stop', 'kill', 'eat'],
@@ -18,9 +17,13 @@ class UserInput:
                 'nouns': ['door', 'bear', 'princess', 'cabinet'],
                 'numbers': Numbers(),
             }
-        return x_lexicon
+        #return x_lexicon
+        print(x_lexicon)
     
-    def scan(self, something):
-        return something 
-        
+    def scan(self, words):
+        return self
+
 # NEED TO DEFINE SCAN SOMEWHERE!
+
+x = UserInput()
+x.lexicon() 
