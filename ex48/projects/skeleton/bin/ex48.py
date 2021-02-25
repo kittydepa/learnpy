@@ -19,6 +19,8 @@ class UserInput:
                 'numbers': Numbers(),
             }
         return x_lexicon
-
-
+    
+    def scan(self, something):
+        return something 
+        
 # NEED TO DEFINE SCAN SOMEWHERE!
