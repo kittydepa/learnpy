@@ -7,7 +7,7 @@ words = stuff.split()
 
 # Lexicon Tuples
 
-first_word = ('verbä', 'go')
+first_word = ('verb', 'go')
 second _word = ('direction', 'north')
 third_word = ('direction', 'west')
 
@@ -25,20 +25,22 @@ class Numbers:
 
 
 class UserInput:
-
-    def lexicon(self):
-        x_lexicon = {
-                'directions': ['north', 'south', 'east', 'west'],
-                'verbs': ['go', 'stop', 'kill', 'eat'],
-                'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
-                'nouns': ['door', 'bear', 'princess', 'cabinet'],
-                'numbers': Numbers(),
-            }
-        #return x_lexicon
-        print(x_lexicon)
     
-    def scan(self, words):
-        return self
+    def lexicon(self):
+        lexicon = {
+            'directions': ['north', 'south', 'east', 'west'],
+            'verbs': ['go', 'stop', 'kill', 'eat'],
+            'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
+            'nouns': ['door', 'bear', 'princess', 'cabinet'],
+            'numbers': Numbers(),
+        }
+        print(lexicon)
+
+    def scan(self, stuff, words): # Not sure what to call the latter
+        stuff = input('> ')
+        words = stuff.split()
+    
+    
 
 # NEED TO DEFINE SCAN SOMEWHERE!
 
