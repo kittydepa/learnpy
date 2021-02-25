@@ -19,3 +19,6 @@ class UserInput:
                 'numbers': Numbers(),
             }
         return x_lexicon
+
+
+# NEED TO DEFINE SCAN SOMEWHERE!
