@@ -1,12 +1,21 @@
-## Part 1. Loops that print even numbers from 1-10
+### Part 1. Loops that print even numbers from 1-10
 
-# a. For loop
+## a. For loop
 
-for i in range(0, 10):
-    if i % 2 == 0:
-        print(i)
+# for i in range(1, 1):
+#     if i % 2 == 0:
+#         print(i)
+#     continue
 
-# b. While loop
+
+## b. While loop
+
+# i = 0
+
+# while i  < 10:
+#     i += 2
+#     print(i)
+
 
 
 # c. Recursive loop
