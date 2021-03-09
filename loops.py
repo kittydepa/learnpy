@@ -19,7 +19,17 @@
 
 
 # c. Recursive loop
+def number(first, last):
+    if first % 2 != 1:
+        print(f"{first}")
+    
+    if first == last:
+        return
+    else:
+        number(first + 1, last) # how tf did this work
 
+
+number(1, 11)
 
 # d. Using 'break'
 
