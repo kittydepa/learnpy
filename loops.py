@@ -62,7 +62,7 @@ def number(first, last):
     if first == last:
         return
     else:
-        number(first + 3, last)
+        number(first + 1, last)
 
 number(3, 30) # No idea how this works yet...
 
