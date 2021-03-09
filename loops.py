@@ -1,7 +1,6 @@
 ### Part 1. Loops that print even numbers from 1-10
 
-## a. For loop
-
+### a. For loop
 # for i in range(1, 1):
 #     if i % 2 == 0:
 #         print(i)
@@ -9,7 +8,6 @@
 
 
 ## b. While loop
-
 # i = 0
 
 # while i  < 10: # This is true
@@ -18,18 +16,20 @@
 
 
 
-# c. Recursive loop
-def number(first, last):
-    if first % 2 != 1:
-        print(f"{first}")
+# # c. Recursive loop
+# def number(first, last):
+#     if first % 2 != 1:
+#         print(f"{first}")
     
-    if first == last:
-        return
-    else:
-        number(first + 1, last) # how tf did this work
+#     if first == last:
+#         return
+#     else:
+#         number(first + 1, last) # how tf did this work
 
 
-number(1, 11)
+# number(1, 11)
+
+
 
 # d. Using 'break'
 
@@ -43,6 +43,8 @@ number(1, 11)
 #     if i % 3 == 0:
 #         print(i)
 
+
+
 # # b. While loop
 # i = 0
 
@@ -50,7 +52,20 @@ number(1, 11)
 #     i += 3
 #     print(i)
 
+
+
 # c. Recursive loop
+def number(first, last):
+    if first % 3 != 1:
+        print(f"{first}")
+    
+    if first == last:
+        return
+    else:
+        number(first + 3, last)
+
+number(3, 30) # No idea how this works yet...
+
 
 
 # d. Using break
