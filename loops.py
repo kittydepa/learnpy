@@ -56,7 +56,7 @@
 
 # c. Recursive loop
 def number(first, last):
-    if first % 3 != 1:
+    if first % 3 == 0:
         print(f"{first}")
     
     if first == last:
