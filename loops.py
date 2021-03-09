@@ -64,7 +64,19 @@ def number(first, last):
     else:
         number(first + 1, last)
 
+print("== number ==")
 number(3, 30) # No idea how this works yet...
+
+
+def number2(first, last):
+    print(f"{first}")
+    if first == last:
+        return
+    else:
+        number(first + 3, last)
+
+print("== number2 ==")
+number2(3, 30)
 
 
 
