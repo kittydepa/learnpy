@@ -1,7 +1,7 @@
 ### Part 1. Loops that print even numbers from 1-10
 
 ### a. For loop
-# for i in range(1, 1):
+# for i in range(1, 11):
 #     if i % 2 == 0:
 #         print(i)
 #     continue
@@ -32,6 +32,11 @@
 
 
 # d. Using 'break'
+for i in range (1, 101):
+    if i % 2 == 0:
+        print(i)
+    if i == 10:
+        break
 
 
 
@@ -54,29 +59,29 @@
 
 
 
-# c. Recursive loop
-def number(first, last):
-    if first % 3 == 0:
-        print(f"{first}")
+# # c. Recursive loop
+# def number(first, last):
+#     if first % 3 == 0:
+#         print(f"{first}")
     
-    if first == last:
-        return
-    else:
-        number(first + 1, last)
+#     if first == last:
+#         return
+#     else:
+#         number(first + 1, last)
 
-print("== number ==")
-number(3, 30) # No idea how this works yet...
+# print("== number ==")
+# number(3, 30) # No idea how this works yet...
 
 
-def number2(first, last):
-    print(f"{first}")
-    if first == last:
-        return
-    else:
-        number(first + 3, last)
+# def number2(first, last):
+#     print(f"{first}")
+#     if first == last:
+#         return
+#     else:
+#         number(first + 3, last)
 
-print("== number2 ==")
-number2(3, 30)
+# print("== number2 ==")
+# number2(3, 30)
 
 
 

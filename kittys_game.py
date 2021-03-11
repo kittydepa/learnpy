@@ -1,35 +1,40 @@
-print("""You are in a cave, and enter a room with two doors.
-Do you go through door #1 or door #2?""")
+import time
 
-door = input("> ")
+print("""It is 10th of March, 2021. It is your birthday!""")
+time.sleep(2)
+print("Happy Birthday!!!")
+time.sleep(2)
+print("Who loves you most in this world?")
 
-if door == "1":
+answer = input("> ")
+
+if answer == "1":
     print("There's a really cute group of K-pop stars standing around.")
-    print("What do you do?")
-    print("1. Run in and start dancing.")
-    print("2. Scream at them.")
-
-    kpop = input("> ")
-
-    if kpop == "1":
-        print("They all stare at you, thinking you are a weirdo. Good job!")
-    elif kpop == "2":
-        print("They all scream with you. Good job!")
-    else:
-        print("They were not found of that, so they close the door. Good job!")
-
-elif door == "2":
-    print("Your great, great, great grandparents are there.")
-    print("What do you do?")
-    print("1. Tell them who you are and about modern society.")
-    print("2. Try to get to know them, how life is for them.")
-
-    grand = input("> ")
-
-    if grand == "1":
-        print("They claim you are a witch and burn you alive. Good job!")
-    else:
-        print("They are very suspicious of who you are, and stab you with a pitchfork. Good job!")
-
 else:
-    print("You stumble around and fall on a knife and die. Good job!")
+    print("Kitty does!")
+
+time.sleep(2)
+print("And who is the most handsome man in the world?")
+
+x = input("> ")
+
+if x == "Me":
+    print("Cristian is!")
+else:
+    print("Cristian is!")
+
+time.sleep(2)
+print("What do you want for your birthday?")
+print("Enter 1 for Sexy Time or 2 for Turkey Sexy Time.")
+
+answer2 = input("> ")
+
+if answer == "1":
+    print("You got it ;)")
+    print("Meet me in the bedroom at 19.30 sharp.")
+else:
+    print("You got it ;)")
+    print("Meet me in the bedroom at 19.30 sharp.")
+
+time.sleep(2)
+print("I love you so much! - Kitty ")
