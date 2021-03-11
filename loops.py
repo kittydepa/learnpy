@@ -31,8 +31,11 @@
 
 
 
-# d. Using 'break'
+# d. Using 'break' AND continue
 for i in range (1, 101):
+    # Skip number 4 though
+    if i == 4:
+        continue
     if i % 2 == 0:
         print(i)
     if i == 10:
