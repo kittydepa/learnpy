@@ -31,15 +31,15 @@
 
 
 
-# # d. Using 'break' AND continue, for no. 1-10 divisible by 2
-# for i in range (1, 101):
-#     # Skip number 4 though
-#     if i == 4:
-#         continue
-#     if i % 2 == 0:
-#         print(i)
-#     if i == 10:
-#         break
+# d. Using 'break' AND continue, for no. 1-10 divisible by 2
+for i in range (1, 101):
+    # Skip number 4 though
+    if i == 4:
+        continue
+    if i % 2 == 0:
+        print(i)
+    if i == 10:
+        break
 
 
 
@@ -89,11 +89,11 @@
 
 
 # # d. Using break and continue, for no. 1-30, divisible by 3
-# for i in range(1, 101):
-#     # Skip no. 6 though
-#     if i == 6:
-#         continue
-#     if i % 3 == 0:
-#         print(i)
-#     if i == 30:
-#         break
+for i in range(1, 101):
+    # Skip no. 6 though
+    if i == 6:
+        continue
+    if i % 3 == 0:
+        print(i)
+    if i == 30:
+        break
