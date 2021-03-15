@@ -17,28 +17,37 @@
 l= [9, 7, 7, 9, 4]
 
 
-# 1a. Calculate the mean
-list = [9, 7, 7, 9, 4]
+# # 1a. Calculate the mean
+# list = [9, 7, 7, 9, 4]
 
-total = sum(list)
-x = total / (len(list))
+# total = sum(list)
+# x = total / (len(list))
 
 # print(x)
 
 
 
-# 1b. Calculate the median
+# # 1b. Calculate the median
+# from numpy import median 
 
-from numpy import median 
+# list.sort()
+# print("This is the list, when it is sorted: \n", list)
 
-list.sort()
-print("This is the list, when it is sorted: \n", list)
+# print("")
 
-print("")
+# x = median(list)
+# print("The median of the list is: \n", x)
 
-x = median(list)
-print("The median of the list is: \n", x)
 
+
+# 1c. Calculate the mode
+import statistics
+
+x = statistics.mode(list)
+
+print("This is the mode: ", x)
+
+## Help https://www.nobledesktop.com/learn/python/mode-in-python
 
 
 
