@@ -7,9 +7,20 @@
 # import random 
 
 # list = []
+
 # for i in range(0, 5):
 #     n = random.randint(1, 10)
 #     list.append(n)
+
 # print(list) # Manually enter the output of this into list, so we are working with the same set of no.
 
+l= [9, 7, 7, 9, 4]
+
+
+# 1a. Calculate the mean
 list = [9, 7, 7, 9, 4]
+
+total = sum(list)
+x = total / (len(list))
+
+print(x)
