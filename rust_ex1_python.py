@@ -23,4 +23,26 @@ list = [9, 7, 7, 9, 4]
 total = sum(list)
 x = total / (len(list))
 
-print(x)
+# print(x)
+
+
+
+# 1b. Calculate the median
+
+from numpy import median 
+
+list.sort()
+print("This is the list, when it is sorted: \n", list)
+
+print("")
+
+x = median(list)
+print("The median of the list is: \n", x)
+
+
+
+
+
+
+
+
