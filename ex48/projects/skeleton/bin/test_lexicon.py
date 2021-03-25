@@ -1,8 +1,8 @@
-from projects.skeleton.bin.ex48 import Numbers
+#from projects.skeleton.bin.ex48 import Numbers
 import pytest
 
-from ex48 import UserInput
-from ex48 import Numbers
+#from ex48 import UserInput
+#from ex48 import Numbers
 
 def test_directions():
     
