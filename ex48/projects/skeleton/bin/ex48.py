@@ -26,25 +26,25 @@ class Numbers:
         except ValueError:
             return None
 
-lexicon = {
-    'directions': ['north', 'south', 'east', 'west'],
-        'verbs': ['go', 'stop', 'kill', 'eat'],
-        'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
-        'nouns': ['door', 'bear', 'princess', 'cabinet'],
-        'numbers': Numbers(),
- }
-
 
 
 class UserInput(Numbers):
+    lexicon = {
+        'directions': ['north', 'south', 'east', 'west'],
+            'verbs': ['go', 'stop', 'kill', 'eat'],
+            'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
+            'nouns': ['door', 'bear', 'princess', 'cabinet'],
+            'numbers': Numbers(),
+    }
 
-    def __init__(self, dict):
-        self.dict = lexicon
+
+   # def __init__(self, dict):
+        #self.dict = lexicon
 
     def scan(self, input):
         self.input = input("> ")
 
-        if input in lexicon:
+        if input in self.lexicon:
             #return[LEXICON THING_ THINK OF THE PASSPORT EXAMPLE WITH DICTS!]
             print("This shit worked!")
     
