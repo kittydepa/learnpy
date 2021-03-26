@@ -1,3 +1,8 @@
+# Scanner will take a string of raw input from a user
+# It will return a sentence that is composed of a list of tuples with the (TOKEN, WORD) pairing.
+# If a word is NOT part of lexicon, it should still return WORD but set the TOKEN to an error. 
+    ## This error token will tell the user they messed up
+
 """
 # Base stuff
 
@@ -13,8 +18,6 @@ third_word = ('direction', 'west')
 
 
 """
-
-
 class Numbers:
 
     def convert_number(self, s):
@@ -23,26 +26,34 @@ class Numbers:
         except ValueError:
             return None
 
+lexicon = {
+    'directions': ['north', 'south', 'east', 'west'],
+        'verbs': ['go', 'stop', 'kill', 'eat'],
+        'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
+        'nouns': ['door', 'bear', 'princess', 'cabinet'],
+        'numbers': Numbers(),
+ }
 
-class UserInput:
+
+
+class UserInput(Numbers):
+
+    def __init__(self, dict):
+        self.dict = lexicon
+
+    def scan(self, input):
+        self.input = input("> ")
+
+        if input in lexicon:
+            #return[LEXICON THING_ THINK OF THE PASSPORT EXAMPLE WITH DICTS!]
+            print("This shit worked!")
     
-    def lexicon(self):
-        lexicon = {
-            'directions': ['north', 'south', 'east', 'west'],
-            'verbs': ['go', 'stop', 'kill', 'eat'],
-            'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
-            'nouns': ['door', 'bear', 'princess', 'cabinet'],
-            'numbers': Numbers(),
-        }
-        print(lexicon)
+    # def scan(self, stuff, words): # Not sure what to call the latter
+    #     stuff = input("> ")
+    #     words = stuff.split()    
 
-    def scan(self, stuff, words): # Not sure what to call the latter
-        stuff = input('> ')
-        words = stuff.split()
-    
-    
 
-# NEED TO DEFINE SCAN SOMEWHERE!
 
-x = UserInput()
-x.lexicon() 
+# def scan(input):
+#     if input == "go":
+#         return [('verb', 'go')]
