@@ -1,3 +1,4 @@
+
 # What as given by the author. Now, write the code that will make this GO
 
 # from projects.skeleton.bin.ex48 import Scanner
@@ -8,6 +9,11 @@ from ex48 import Numbers
 from ex48 import UserInput
 from ex48 import lexicon
 
+#from projects.skeleton.bin.ex48 import Numbers
+import pytest
+
+#from ex48 import UserInput
+#from ex48 import Numbers
 
 
 def test_directions():
@@ -47,9 +53,17 @@ def test_directions():
 #                       ('number', '91234')]
 
 
+
+# def test_errors():
+#     assert lexicon.scan("ASDFADFASDF") == [('error', 'ASDFADFASDF')]
+#     result = lexicon.scan("bear IAS princess")
+#     assert result == [('noun', 'bear'),
+#                       ('error', 'IAS'),
+#                       ('noun',=======
 # def test_errors():
 #     assert lexicon.scan("ASDFADFASDF") == [('error', 'ASDFADFASDF')]
 #     result = lexicon.scan("bear IAS princess")
 #     assert result == [('noun', 'bear'),
 #                       ('error', 'IAS'),
 #                       ('noun', 'princess')]
+
