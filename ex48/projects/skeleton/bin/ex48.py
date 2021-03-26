@@ -29,22 +29,22 @@ class Numbers:
 
 
 class UserInput(Numbers):
+    
+    def __init__(self):
+       self.lexicon = dict()
+    
     lexicon = {
-        'directions': ['north', 'south', 'east', 'west'],
-            'verbs': ['go', 'stop', 'kill', 'eat'],
-            'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
-            'nouns': ['door', 'bear', 'princess', 'cabinet'],
-            'numbers': Numbers(),
-    }
-
-
-   # def __init__(self, dict):
-        #self.dict = lexicon
+            'directions': ['north', 'south', 'east', 'west'],
+                'verbs': ['go', 'stop', 'kill', 'eat'],
+                'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
+                'nouns': ['door', 'bear', 'princess', 'cabinet'],
+                'numbers': Numbers(),
+        }
 
     def scan(self, input):
         self.input = input("> ")
 
-        if input in self.lexicon:
+        if input in UserInput:
             #return[LEXICON THING_ THINK OF THE PASSPORT EXAMPLE WITH DICTS!]
             print("This shit worked!")
     
@@ -57,3 +57,5 @@ class UserInput(Numbers):
 # def scan(input):
 #     if input == "go":
 #         return [('verb', 'go')]
+#lexicon = UserInput()
+

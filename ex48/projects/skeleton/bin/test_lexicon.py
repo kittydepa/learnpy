@@ -17,9 +17,9 @@ import pytest
 
 
 def test_directions():
-    #lexicon = UserInput()
-    assert UserInput.lexicon.scan("north") == [('direction', 'north')]
-    result = UserInput.lexicon.scan("north south east")
+    
+    assert UserInput.scan("north") == [('direction', 'north')]
+    result = UserInput.scan("north south east")
     assert result == [('direction', 'north'),
                       ('direction', 'south'),
                       ('direction', 'east')]
