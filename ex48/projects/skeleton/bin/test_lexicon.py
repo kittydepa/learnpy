@@ -43,8 +43,8 @@ def test_nouns():
 
 
 def test_numbers():
-    assert convert_number("1234") == [('number', 1234)]
-    result = convert_number("3 91234")
+    assert scan("1234") == [('number', 1234)]
+    result = scan("3 91234")
     assert result == [('number', 3),
                       ('number', '91234')]
 
