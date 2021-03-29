@@ -17,9 +17,10 @@ import pytest
 
 
 def test_directions():
-    
-    assert UserInput.scan("north") == [('direction', 'north')]
-    result = UserInput.scan("north south east")
+    x = "north"
+    x = UserInput()
+    assert x.scan("north") == [('direction', 'north')]
+    result = x.scan("north south east")
     assert result == [('direction', 'north'),
                       ('direction', 'south'),
                       ('direction', 'east')]

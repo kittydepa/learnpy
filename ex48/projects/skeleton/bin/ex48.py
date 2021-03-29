@@ -42,9 +42,9 @@ class UserInput(Numbers):
         }
 
     def scan(self, input):
-        self.input = input("> ")
+        self.input = input()
 
-        if input in UserInput:
+        if UserInput in input:
             #return[LEXICON THING_ THINK OF THE PASSPORT EXAMPLE WITH DICTS!]
             print("This shit worked!")
     
