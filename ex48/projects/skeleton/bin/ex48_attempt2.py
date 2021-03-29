@@ -24,13 +24,21 @@ lexicon = {
     'meter': 'distance',
 }
 
+# Why u no work
+# lexicon = {
+#     'directions': ['north', 'south', 'east', 'west'],
+#         'verbs': ['go', 'stop', 'kill', 'eat'],
+#         'stops': ['the', 'in', 'of', 'from', 'at', 'it'],
+#         'nouns': ['door', 'bear', 'princess', 'cabinet'],
+# }
+
 def scan(sentence):
     sentence = sentence.split()
     result = []
     """ sentence got its value from scan('input').
-        Then it splits it up in parts and will be values 
+        Then it splits it up in parts and will be values
         for word in the loop.
-        For each loop word compare its value(part) 
+        For each loop word compare its value(part)
         to the content in lexicon."""
     for word in sentence:
         wordtype = lexicon.get(word, 'error')
@@ -40,15 +48,15 @@ def scan(sentence):
         if word in lexicon:
             result.append(pair)
 
-            """ Then it look if it is a number(str). 
-            If so it convert it with function convert_int to a integer. 
+            """ Then it look if it is a number(str).
+            If so it convert it with function convert_int to a integer.
             Then pair adds 'number + the integer to a."""
         elif word not in lexicon:
             number = convert_number(word)
             if number:
                 pair = ('number', number)
-                
-                """If neither of the two previous condition is met, 
+
+                """If neither of the two previous condition is met,
                 it sets pair to wordtype with its default value (error)"""
             elif word not in lexicon and not number:
                 pair = (wordtype, word)
@@ -57,7 +65,7 @@ def scan(sentence):
 
     print (result)  # For humans
     return result # For python
-    
+
 # This function is used in condition #2
 def convert_number(s):
     try:

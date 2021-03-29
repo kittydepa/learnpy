@@ -9,14 +9,13 @@ from ex48_attempt2 import convert_number
 from ex48_attempt2 import lexicon
 
 
-
 def test_directions():
-
     assert scan("north") == [('direction', 'north')]
     result = scan("north south east")
     assert result == [('direction', 'north'),
                       ('direction', 'south'),
                       ('direction', 'east')]
+
 
 def test_verbs():
 
@@ -28,6 +27,7 @@ def test_verbs():
 
 
 def test_stops():
+
     assert scan("the") == [('stop', 'the')]
     result = scan("the in of")
     assert result == [('stop', 'the'),
@@ -36,20 +36,23 @@ def test_stops():
 
 
 def test_nouns():
+
     assert scan("bear") == [('noun', 'bear')]
     result = scan("bear princess")
     assert result == [('noun', 'bear'),
                       ('noun', 'princess')]
 
 
-# def test_numbers():
-#     assert scan("1234") == [('number', 1234)]
-#     result = scan("3 91234")
-#     assert result == [('number', 3),
-#                       ('number', '91234')]
+def test_numbers():
+
+    assert scan("1234") == [('number', 1234)]
+    result = scan("3 91234")
+    assert result == [('number', 3),
+                      ('number', 91234)]
 
 
 def test_errors():
+
     assert scan("ASDFADFASDF") == [('error', 'ASDFADFASDF')]
     result = scan("bear IAS princess")
     assert result == [('noun', 'bear'),
