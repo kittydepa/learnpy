@@ -9,18 +9,11 @@ from ex48 import Numbers
 from ex48 import UserInput
 #from ex48 import lexicon
 
-#from projects.skeleton.bin.ex48 import Numbers
-import pytest
-
-#from ex48 import UserInput
-#from ex48 import Numbers
-
 
 def test_directions():
-    x = "north"
-    x = UserInput()
-    assert x.scan("north") == [('direction', 'north')]
-    result = x.scan("north south east")
+    words = UserInput()
+    assert words.scan("north") == [('direction', 'north')]
+    result = words.scan("north south east")
     assert result == [('direction', 'north'),
                       ('direction', 'south'),
                       ('direction', 'east')]

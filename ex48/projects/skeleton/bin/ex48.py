@@ -28,11 +28,10 @@ class Numbers:
 
 
 
-class UserInput(Numbers):
+class UserInput():
     
     def __init__(self):
-       self.lexicon = dict()
-    
+       self.lexicon = dict()    
     lexicon = {
             'directions': ['north', 'south', 'east', 'west'],
                 'verbs': ['go', 'stop', 'kill', 'eat'],
@@ -41,13 +40,17 @@ class UserInput(Numbers):
                 'numbers': Numbers(),
         }
 
-    def scan(self, input):
-        self.input = input()
+    def scan(self, words):
+        stuff = input("> ")
+        self.words = stuff.split()  
 
-        if UserInput in input:
+        if words in UserInput:
             #return[LEXICON THING_ THINK OF THE PASSPORT EXAMPLE WITH DICTS!]
             print("This shit worked!")
+        else:
+            print("Failed.")
     
+
     # def scan(self, stuff, words): # Not sure what to call the latter
     #     stuff = input("> ")
     #     words = stuff.split()    
