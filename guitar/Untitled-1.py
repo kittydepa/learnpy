@@ -54,7 +54,7 @@ scales = {
 
 # Now, we have an easy way of accessing the notes of any scale, start at any root!
 #print("A minor scale: ", get_notes('A', scales['minor']))
-# print("Test: ", get_notes('E', scales['minor_blues']))
+print("Test: ", get_notes('E', scales['minor_blues']))
 
 
 ## STEP 3 MAKING THE GUITAR
@@ -64,18 +64,17 @@ for i in strings.keys():
     start = whole_notes.index(i)
     strings[i] = whole_notes[start:start + 20] # Shows up in ErrorLens, but runs without error?
 
-# print(strings.keys())
-# print("Notes on the E string: ", strings['E'])
+print(strings.keys())
+print("Notes on the E string: ", strings['E'])
 
 # Finding notes on a guitar function
 def find_notes(scale):
     notes_strings = {i:0 for i in "EADGB"}
-    
     # for ever string
     for key in strings.keys():
         # create an empty list of indexes
         indexes = []
-        for note in scale:
+        for note in scale.notes:
             # append index where note of the scale is found in 
             ind = strings[key].index(note)
             indexes.append(ind)
@@ -86,12 +85,12 @@ def find_notes(scale):
         notes_strings[key] = indexes
     return notes_strings
 
-
-# finding notes in a scale:
+# Finding notes in a cale
 C_minor_blues = get_notes('C', scales['minor_blues'])
-# finding positions of these notes in the guitar, as a dict
+
+# Finding positions of these notes in the guitar, as a dict
 positions = find_notes(C_minor_blues)
+
 print('Position of C minor blues in the guitar:')
 for i in positions.keys():
     print('Notes in the {} string {}'.format(i, positions[i]))
-
