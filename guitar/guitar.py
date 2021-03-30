@@ -62,7 +62,7 @@ print("Test: ", get_notes('E', scales['minor_blues']))
 strings = {i:0 for i in 'EADGB'}
 for i in strings.keys():
     start = whole_notes.index(i)
-    strings[i] = whole_notes[start:start + 20]
+    strings[i] = whole_notes[start:start + 20] # Shows up in ErrorLens, but runs without error?
 
 print(strings.keys())
 print("Notes on the E string: ", strings['E'])
