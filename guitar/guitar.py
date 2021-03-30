@@ -59,7 +59,10 @@ print("Test: ", get_notes('E', scales['minor_blues']))
 
 ## STEP 3 MAKING THE GUITAR
 # making a dict with the name of the strings as its keys
-# strings = {i:0 for i in 'EADGB'}
-# for i in strings.keys():
-#     start = whole_notes.index(i)
-#     strings[i] = whole_notes[start:start + 20]
+strings = {i:0 for i in 'EADGB'}
+for i in strings.keys():
+    start = whole_notes.index(i)
+    strings[i] = whole_notes[start:start + 20]
+
+print(strings.keys())
+print("Notes on the E string: ", strings['E'])
