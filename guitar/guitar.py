@@ -29,10 +29,8 @@ def get_notes(key, intervals):
         and intervals z.B Tone Tone Semitone"""
 
     whole_notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G',
-                    'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#',
-                    'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B',
-                    'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G',
                     'G#', 'A', 'A#', 'B'] * 3 # A long seq. of notes to slice from
+
     root = whole_notes.index(key) # Finding start of slice
     octave = whole_notes[root:root + 12] # taking 12 consecutive elements
     return [octave[i] for i in intervals] # accessing indexes specified by 'intervals' to retrive notes
@@ -54,5 +52,5 @@ scales = {
 }
 
 # Now, we have an easy way of accessing the notes of any scale, start at any root!
-print("A minor scale: ", get_notes('A', scales['minor']))
-print("Test: ", get_notes('G', scales['dorian']))
+#print("A minor scale: ", get_notes('A', scales['minor']))
+print("Test: ", get_notes('', scales['mixolydian']))
