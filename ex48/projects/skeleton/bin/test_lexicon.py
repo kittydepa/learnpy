@@ -10,9 +10,9 @@ from ex48_attempt2 import lexicon
 
 
 def test_directions():
-    assert scan("north") == [('direction', 'north')]
-    result = scan("north south east")
-    assert result == [('direction', 'north'),
+    assert scan("north") == [('direction', 'north')] # Ensure that when north is called within Scan, this is the output
+    result = scan("north south east") # ensure that, this result of input with san, will result in NEXT LINE
+    assert result == [('direction', 'north'), # That it will be like this
                       ('direction', 'south'),
                       ('direction', 'east')]
 
@@ -53,8 +53,8 @@ def test_numbers():
 
 def test_errors():
 
-    assert scan("ASDFADFASDF") == [('error', 'ASDFADFASDF')]
-    result = scan("bear IAS princess")
+    assert scan("ASDFADFASDF") == [('error', 'ASDFADFASDF')] # ensure that this will be an error
+    result = scan("bear IAS princess") # ensure that this will be an error for IAS, but the rest will not be
     assert result == [('noun', 'bear'),
                       ('error', 'IAS'),
                       ('noun', 'princess')]

@@ -73,11 +73,13 @@ def convert_number(s):
     except ValueError:
         return None
 
-if __name__ == '__main__':
+if __name__ == '__main__': # You NEED this to make it work...hmmm
     sentence = input('write something:> ')
     sentence = sentence.lower()
 
     scan(sentence)
+else:
+    print("FAILED!")
 
 
 # NOT MY CODE
