@@ -2,7 +2,8 @@
 
 # Using the intervals of a given scale as indexes.
 # Two octaves worth of notes
-
+whole_notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G',
+                    'G#', 'A', 'A#', 'B'] * 3
 # # Example, index where element 'B' is located.
 # root = whole_notes.index('B')
 #
@@ -32,7 +33,7 @@ def get_notes(key, intervals):
                     'G#', 'A', 'A#', 'B'] * 3 # A long seq. of notes to slice from
 
     root = whole_notes.index(key) # Finding start of slice
-    octave = whole_notes[root:root + 12] # taking 12 consecutive elements
+    octave = whole_notes[root:root + 13] # taking 12 consecutive elements
     return [octave[i] for i in intervals] # accessing indexes specified by 'intervals' to retrive notes
 
 ## STEP 2
@@ -53,4 +54,12 @@ scales = {
 
 # Now, we have an easy way of accessing the notes of any scale, start at any root!
 #print("A minor scale: ", get_notes('A', scales['minor']))
-print("Test: ", get_notes('', scales['mixolydian']))
+print("Test: ", get_notes('E', scales['minor_blues']))
+
+
+## STEP 3 MAKING THE GUITAR
+# making a dict with the name of the strings as its keys
+# strings = {i:0 for i in 'EADGB'}
+# for i in strings.keys():
+#     start = whole_notes.index(i)
+#     strings[i] = whole_notes[start:start + 20]
