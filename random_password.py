@@ -24,9 +24,9 @@ punctuation2 = chr(random.randint(33, 39))
 #print(password)
 
 # Now we need to shuffle, make a function that shuffles
-def shuffle(x):
+def new_password(x):
     tempList = list(x)
-    random.shuffle(tempList)
+    random.shuffle(tempList) # random.shuffle is a thing!  https://pynative.com/python-random-shuffle/
     return ''.join(tempList) # Why do we need this part/why is it written like this?
 
 
@@ -34,7 +34,7 @@ def shuffle(x):
 password = (uppercaseLetter1 + lowercaseLetter1 + digit1 + punctuation1 + uppercaseLetter2 + lowercaseLetter2 + digit2 + punctuation2)
 
 # Appling the shuffle function to our password formula
-password = shuffle(password)
+password = new_password(password)
 
 # Printing the output
 print(password)
