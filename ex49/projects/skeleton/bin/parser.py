@@ -50,10 +50,10 @@ def skip(word_list, word_type):
 def parse_verb(word_list):
     skip(word_list, 'stop') #We skip any stop words, then peek to see if the next work is a verb.
 
-    if peek(work_list) == 'verb':
+    if peek(word_list) == 'verb':
         return match(word_list, 'verb')
     else:
-        rause ParserError("Expected a verb next.")
+        raise ParserError("Expected a verb next.")
 
 
 def parse_object(word_list): # Here we handle both a noun and directions
