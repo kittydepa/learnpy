@@ -105,7 +105,7 @@ def plot(key, intervals, night = True):
     scale = get_notes(key, intervals)
 
     # plot strings
-    fig, ax = plt.subplots(figsize=(20, 6))
+    fig, ax = plt.subplots(figsize = (20, 6))
     background = ['white', 'black']
     for i in range(1, 7):
         ax.plot([i for a in range(22)])
@@ -150,4 +150,4 @@ def plot(key, intervals, night = True):
     plt.show
 
 
-plot('C', scales['major']) # Errors, see Jupyter notebook file
+plot('D', scales['major']) # Errors, see Jupyter notebook file
