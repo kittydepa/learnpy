@@ -10,7 +10,18 @@
 
 import random
 
-uppercaseLetter = chr(random.rantint(65, 90)) # Generate a random Uppercase letter (based on ASCII code??)
-lowercaseLetter = chr(random.randint(97, 122)) # based on ASCII
-digit = chr(random.randint(48, 57))
-punctuation = chr(random.randint(33, 152))
+uppercaseLetter1 = chr(random.randint(65, 90))
+uppercaseLetter2 = chr(random.randint(65, 90)) # Generate a random Uppercase letter (based on ASCII code??)
+
+lowercaseLetter1 = chr(random.randint(97, 122)) # based on ASCII
+lowercaseLetter2 = chr(random.randint(97, 122))
+
+digit1 = chr(random.randint(48, 57))
+digit2 = chr(random.randint(48, 57))
+
+punctuation1 = chr(random.randint(33, 39))
+punctuation2 = chr(random.randint(33, 39))
+
+password = (uppercaseLetter1 + lowercaseLetter1 + digit1 + punctuation1 + uppercaseLetter2 + lowercaseLetter2 + digit2 + punctuation2)
+
+print(password)
