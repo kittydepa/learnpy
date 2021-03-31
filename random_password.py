@@ -39,3 +39,5 @@ password = new_password(password)
 
 # Printing the output
 print("Here is your new randomly generated password: ", password)
+
+# more advanced: https://pynative.com/python-generate-random-string/
