@@ -4,7 +4,7 @@ class ParserError(Exception):
     pass
 
 
-class Sentence:
+class Sentence(object):
 
     def __init__(self, subject, verb, object):
         # remember, we take ('noun', 'princess') tuples and convert them
@@ -19,8 +19,7 @@ class Sentence:
 
 # Are functions that make up the parser
 
-def peek(word_list): # to make decisions about what kind of setnence we're dealing with, based on the next word...
-                         # then call another function to consume that word and carry on- see the next funct
+def peek(word_list): # to make decisions about what kind of setnence we're dealing with, based on the next word...# then call another function to consume that word and carry on- see the next funct
     if word_list:
         word = word_list[0]
         return word[0]
@@ -58,16 +57,37 @@ def parse_verb(word_list):
 
 def parse_object(word_list): # Here we handle both a noun and directions
     skip(word_list, 'stop')
-    next_word = peek(word_list)
+    next = peek(word_list)
 
-    if next_word == 'noun':
+    if next == 'noun':
         return match(word_list, 'noun')
-    elif next_word == 'direction':
+    elif next == 'direction':
         return match(word_list, 'direction')
     else:
         raise ParserError("Expected a noun or direction next.")
 
 
+# def parse_subject(word_list, subj):
+#     verb = parse_verb(word_list)
+#     obj = parse_object(word_list)
+#
+#     return Sentence(subj, verb, obj)
+#
+# def parse_sentence(word_list):
+#     skip(word_list, 'stop')
+#
+#     start = peek(word_list)
+#
+#     if start == 'noun':
+#         subj = match(word_list, 'noun')
+#         return parse_subject(word_list, subj)
+#     elif start == 'verb':
+#         return parse_subject(word_list, ('noun'))
+#     else:
+#         raise ParserError("Must start with noun or verb, not: %s" % start)
+
+
+## -------- THIS DID WORK!! Just did not run if file was only named 'parser' What was originally in the book: -------- #
 def parse_subject(word_list):
     skip(word_list, 'stop')
     next_word = peek(word_list)
