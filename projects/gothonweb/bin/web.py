@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder = r'C:\Users\Kitty\Desktop\learnpy\project
 def index():
     greeting = "Hello World"
 
-    if request.method == "POST":
+    if request.method == "POST": # See HTML where this statement is satisfied
         name = request.form['name']
         greet = request.form['greet']
         greeting = f"{greet}, {name}"
