@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Fill Out This Form</h1>
+<form action = "/hello" method = "POST"> <!--This is referred to in the Py script-->
+    A Greeting: <input type = "text" name = "greet"> <!--Both 'inputs' match the variable names in the Py script-->
+    <br/>
+    Your Name: <input type = "text" name = "name">
+    <br/>
+    <input type = "submit">
+</form>
+
+{% endblock %}
