@@ -4,7 +4,7 @@ manually doing it, refreshing the page and adding the input, etc.
 '''
 
 import pytest
-from web import app # whole appe here. 
+from web import app # whole app here. 
 
 app.config['TESTING'] = True # Read more here: https://flask.palletsprojects.com/en/1.1.x/config/
 webz = app.test_client() # Read more here: https://flask.palletsprojects.com/en/1.1.x/testing/ 
