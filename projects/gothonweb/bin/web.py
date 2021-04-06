@@ -12,6 +12,7 @@ def index():
         name = request.form['name']
         greet = request.form['greet']
         greeting = f"{greet}, {name}"
+
         return render_template("index.html", greeting = greeting)
     else:
         return render_template("hello_form.html")
