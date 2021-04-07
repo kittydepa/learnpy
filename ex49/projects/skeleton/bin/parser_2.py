@@ -1,8 +1,8 @@
 # Starting with the exception we need for a parsing error:
-
 class ParserError(Exception):
     pass
 
+# ---------- End of the ParserErrorr() class ---------- # 
 
 class Sentence(object):
 
@@ -65,26 +65,6 @@ def parse_object(word_list): # Here we handle both a noun and directions
         return match(word_list, 'direction')
     else:
         raise ParserError("Expected a noun or direction next.")
-
-
-# def parse_subject(word_list, subj):
-#     verb = parse_verb(word_list)
-#     obj = parse_object(word_list)
-#
-#     return Sentence(subj, verb, obj)
-#
-# def parse_sentence(word_list):
-#     skip(word_list, 'stop')
-#
-#     start = peek(word_list)
-#
-#     if start == 'noun':
-#         subj = match(word_list, 'noun')
-#         return parse_subject(word_list, subj)
-#     elif start == 'verb':
-#         return parse_subject(word_list, ('noun'))
-#     else:
-#         raise ParserError("Must start with noun or verb, not: %s" % start)
 
 
 ## -------- THIS DID WORK!! Just did not run if file was only named 'parser' What was originally in the book: -------- #
