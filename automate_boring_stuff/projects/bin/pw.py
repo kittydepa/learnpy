@@ -18,7 +18,7 @@ if account in passwords: # Looks in the password dict for the account name
     pyperclip.copy(passwords[account]) # account = the key, aka & what the user entered in the command line
     print('Password for ' + account + ' copied to clipboard.') # if it's there, we get the password
 else:
-    print('There is no account named' + account) # if not, then told it does not exist in the passwords dict
+    print('There is no account named ' + account) # if not, then told it does not exist in the passwords dict
 
 
 # To run this program, go to a command prompt and to where the file is stored
