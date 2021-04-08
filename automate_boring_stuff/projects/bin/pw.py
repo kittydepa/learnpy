@@ -12,7 +12,7 @@ if len(sys.argv) < 2:
     print('Usage: python pw.py [account] - copy account password')
     sys.exit()
 
-account = sys.argv[1]  # first commane line arg is the account name. 
+account = sys.argv[1]  # first commane line arg is the account name. ... # sys.argv[1] is needs to be able to exectue this script from the command line?
 
 if account in passwords: # Looks in the pass dictuionare for the account name
     pyperclip.copy(passwords[account])
