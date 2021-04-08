@@ -16,7 +16,7 @@ account = sys.argv[1]  # first commane line arg is the account name.
 
 if account in passwords: # Looks in the pass dictuionare for the account name
     pyperclip.copy(passwords[account])
-    print('Passwords for ' + account + ' copied to clipboard.') # if it's there, we get the password
+    print('Password for ' + account + ' copied to clipboard.') # if it's there, we get the password
 else:
     print('There is no account named' + account) # if not, then told it does not exist in the passwords dict
 
