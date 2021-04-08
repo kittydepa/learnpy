@@ -8,14 +8,14 @@ passwords = {'email': 'emailpassword123',
 
 # Step 2 - Handling the Command Line Arguments
 import sys, pyperclip
-if len(sys.argv) < 2:
+if len(sys.argv) < 2: # If you do not enter the account name (key) you want the password for, then print the following
     print('Usage: python pw.py [account] - copy account password')
     sys.exit()
 
 account = sys.argv[1]  # first commane line arg is the account name. ... # sys.argv[1] is needs to be able to exectue this script from the command line?
 
-if account in passwords: # Looks in the pass dictuionare for the account name
-    pyperclip.copy(passwords[account])
+if account in passwords: # Looks in the password dict for the account name
+    pyperclip.copy(passwords[account]) # account = the key, aka & what the user entered in the command line
     print('Password for ' + account + ' copied to clipboard.') # if it's there, we get the password
 else:
     print('There is no account named' + account) # if not, then told it does not exist in the passwords dict
