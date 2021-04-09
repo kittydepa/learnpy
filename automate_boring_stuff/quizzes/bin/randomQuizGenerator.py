@@ -41,4 +41,20 @@ for quizNum in range(35): # Go through 35 times, aka the total no. of quizzes we
     states = list(capitals.keys())
     random.shuffle(states)
 
-    # TO DO: Loop through all 50 states, making a question for each state.
+
+    # Loop through all 50 states, making a question for each state: options A - D
+    for questionNum in range(50): # because there are 50 states
+        
+        # Get right and wrong answers
+        correctAnswer = capitals[states[questionNum]] # Easy to obtain, just the value associated with each key!
+        wrongAnswers = list(capitals.values()) # First duplicate ALL values in the dict.
+        del wrongAnswers[wrongAnswers.index(correctAnswer)] # Then, delete the correct answers!
+        wrongAnswers = random.sample(wrongAnswers, 3) # Select random values for the keys, aka  the State capitols for the quiz, and we want 3 wrong answers
+        answerOptions = wrongAnswers + [correctAnswer] # Total number of answer options we want on the quiz
+        random.shuffle(answerOptions) 
+
+        # TO DO: Write the question and answer options to the quiz file.
+
+        # TO DO: Write the answer key to a file.
+
+        
