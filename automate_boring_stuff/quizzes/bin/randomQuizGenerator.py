@@ -53,8 +53,17 @@ for quizNum in range(35): # Go through 35 times, aka the total no. of quizzes we
         answerOptions = wrongAnswers + [correctAnswer] # Total number of answer options we want on the quiz
         random.shuffle(answerOptions) 
 
-        # TO DO: Write the question and answer options to the quiz file.
+        # Write the question and answer options to the quiz file.
+        quizFile.write('%s. What is the capital of %s? \n' % (questionNum + 1,
+            states[questionNum]))
+        for i in range(4): # Answer options
+            quizFile.write('           %s. %s\n' % ('ABCD'[i], answerOptions[i]))
+        quizFile.write('\n')
 
-        # TO DO: Write the answer key to a file.
-
+        # Write the answer key to a file.
+        answerKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[
+            answerOptions.index(correctAnswer)]))
+            
+    quizFile.close()
+    answerKeyFile.close()
         
