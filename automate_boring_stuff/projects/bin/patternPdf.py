@@ -16,8 +16,8 @@ pdfWriter = PyPDF2.PdfFileWriter()
 
 # Copy the pages from each PDF file
 for pageNum in range(pdf1.numPages):
-    pages = pdf1.getPage(pageNum)
-    pdfWriter.addPage(pages)
+    pages = pdf1.getPage(pageNum) # obtain all the pages from pdf1
+    pdfWriter.addPage(pages) # now add the pages from pdf1 to the blank one (pdfWriter)
 
 for pageNum in range(pdf2.numPages):
     pages = pdf2.getPage(pageNum)
@@ -25,7 +25,7 @@ for pageNum in range(pdf2.numPages):
 
 
 pdfOutputFile = open('combined_pattern.pdf', 'wb') # wb = write binary. PDF files are binary
-pdfWriter.write(pdfOutputFile)
+pdfWriter.write(pdfOutputFile) 
 pdfOutputFile.close()
 
 pattern1.close()
