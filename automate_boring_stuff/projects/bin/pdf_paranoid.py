@@ -31,11 +31,12 @@ c. if the pw is incorrect, the program should print a message to
 
 import shutil, os
 import PyPDF2
+from PyPDF2.pagerange import parse_filename_page_ranges
 
 for folderName, subfolder, filenames in os.walk(r'C:\\Users\\Kitty\\Desktop\\learnpy\\automate_boring_stuff\\projects\\bin'):
     if '.pdf' in filenames:
         for pageNum in filenames:
-            pdfFile = open(f'filename.pdf, 'rb'')
+            pdfFile = open('filenames.pdf', 'rb')
             pdfReader = PyPDF2.PdfFileReader(pdfFile)
             pdfWriter = PyPDF2.PdfFileWriter()
         
