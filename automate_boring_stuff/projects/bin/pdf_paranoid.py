@@ -24,6 +24,11 @@ c. if the pw is incorrect, the program should print a message to
   the user and continue to the next PDF
 
 -------------------------------------------------------------------------
+
+Tips/help/solutions:
+https://www.mkamimura.com/2016/07/python-automating-tasks-working-with.html 
+https://github.com/megamillions/PDF-Paranoia/blob/master/pdfParanoia.py 
+
 '''
 
 ## PART 1 
@@ -31,7 +36,7 @@ c. if the pw is incorrect, the program should print a message to
 
 import shutil, os
 import PyPDF2
-from PyPDF2.pagerange import parse_filename_page_ranges
+
 
 for folderName, subfolder, filenames in os.walk(r'C:\\Users\\Kitty\\Desktop\\learnpy\\automate_boring_stuff\\projects\\bin'):
     if '.pdf' in filenames:
