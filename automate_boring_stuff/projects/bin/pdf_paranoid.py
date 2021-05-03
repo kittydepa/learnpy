@@ -41,7 +41,8 @@ for folderName, subfolder, filenames in os.walk(r'C:\\Users\\Kitty\\Desktop\\lea
             pdfWriter = PyPDF2.PdfFileWriter()
         
         print('Give a password: ')
-        pdfWriter.encrypt(input('> '))
+        pw = input('> ')
+        pdfWriter.encrypt(pw)
         resultPdf = open(f'{filenames}_encrypted.pdf', 'wb')
         pdfWriter.write(resultPdf)
         resultPdf.close()
