@@ -34,40 +34,47 @@ https://github.com/megamillions/PDF-Paranoia/blob/master/pdfParanoia.py
 ## PART 1 
 # a. 
 
-import shutil, os
-import PyPDF2
+import PyPDF2, os, sys
 
+password = sys.argv[1]
 
-for folderName, subfolder, filenames in os.walk(r'C:\\Users\\Kitty\\Desktop\\learnpy\\automate_boring_stuff\\projects\\bin'):
-    if '.pdf' in filenames:
-        for pageNum in filenames:
-            pdfFile = open('filenames.pdf', 'rb')
+for folderName, subfolder, filenames in os.walk(os.getcwd()):
+
+    # Find each PDF after walking through the given directory
+    for filename in filenames:
+        if(filename.endswith('.pdf')):
+
+            # Rewrite PDF to become encrypted
+            pdfPath = os.path.join(folderName, filename)
+            pdfFile = open(pdfPath, 'rb')
             pdfReader = PyPDF2.PdfFileReader(pdfFile)
             pdfWriter = PyPDF2.PdfFileWriter()
-        
-        print('Give a password: ')
-        pw = input('> ')
-        pdfWriter.encrypt(pw)
-        resultPdf = open(f'{filenames}_encrypted.pdf', 'wb')
-        pdfWriter.write(resultPdf)
-        resultPdf.close()
 
-    else: 
-        continue 
+            for pageNum in range(pdfReader.numPages):
+                pdfWriter.addPage(pdfReader.getPage(pageNum))
+            
+            resultFilename = filename[:-4] + 'encrypter.pdf'
+            resultPath = os.path.join(folderName, resultFilename)
+            resultPdf = open(resultPath, 'wb')
 
-        #ENCRYPTED SHIT GOES HERE
-#         pdfFile = open('meetingminutes.pdf', 'rb') # open the PDF you want to encrypt and name it/make it callable
-# pdfReader = PyPDF2.PdfFileReader(pdfFile) # set it so a PDF file reader object
-# pdfWriter = PyPDF2.PdfFileWriter() # setting up a blank/new pdf, that will be the NEW encrypted one
+            pdfWriter.encrypt(password)
+            pdfWriter.write(resultPdf)
 
+            # Close orginal and result PDFs, to save
+            pdfFile.close()
+            resultPdf.close()
 
-# # This is how you apply something to the entire PDF file, by iterating through EACH PAGE, and saying to write it/add it to the blank/new PDF created- aka the pdfWriter object
-# for pageNum in range(pdfReader.numPages):
-#     pdfWriter.addPage(pdfReader.getPage(pageNum)) 
+            # # Verfify the encryption
+            # verifyReader = PyPDF2.PdfFileReader(open(resultPath, 'rb'))
+            # verifyReader.decrypt(password)
 
+            # if verifyReader.getPage(0):
 
-# # Now encrpyt/add the password you want for the file, and what you want it to be saved as
-# pdfWriter.encrypt('hi') # user password = first argument, owner password = second, otherwise if just 1 argument is given, then it will be same password for both
-# resultPdf = open('encryptedminutes.pdf', 'wb')
-# pdfWriter.write(resultPdf)
-# resultPdf.close()
+            #     print('%s encrypted as %s. Deleteing %s.' %
+            #                 (filename, resultFilename, filename))
+                
+            #     # Delete original
+            #     os.unlink(pdfPath)
+            
+            # else:
+            #     print('Encryption failed.')
