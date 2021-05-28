@@ -40,7 +40,7 @@ response.raise_for_status() # raise_for_status() checks for errors. If no except
 ''' 
 The 'response.text' variables holds a large string of JSON-formatted data. 
 To convert this into a Python value, you need to call the json.loads() function.
-To make the data print in a pretty way, fo the following:
+To make the data print in a pretty way, do the following:
 '''
 weatherData = json.loads(response.text)
 #print(weatherData)
