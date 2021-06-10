@@ -1,10 +1,10 @@
 # Caeser Cipher
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-import pyperclip
+import pyperclip, time
 
 # The string to be encryped/decrypted
-message = 'This is my secret message.'
+message = input('Enter a message you would like to encrypt: ')
 
 # The encryption/decryption key:
 key = 13
@@ -41,5 +41,19 @@ for symbol in message:
         translated = translated + symbol
 
 # Output the translated string:
-print(translated)
+print("Creating your message...")
+time.sleep(2)
+print("........Loading........")
+time.sleep(2)
+print("Ready! Here it is: ")
+time.sleep(2)
+print("This is the message encrypted: ", translated)
+time.sleep(0.5)
+print("This is the original message: ", message)
 pyperclip.copy(translated)
+time.sleep(2)
+print("Thanks for participating.")
+time.sleep(2)
+
+
+## NOTE TO SELF: Edit the script so that it will ask the user/at the command line if they would first like to encryp ot decrypt
