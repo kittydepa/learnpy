@@ -13,7 +13,7 @@ key = 13
 mode = 'encrypt' # Set this to either 'encrypt' or ' decrypt
 
 # Every possible symbol that can be encrypter:
-SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.' # In cryptography a symbol set is every possible symbol a cipher could contain
 
 # Store the encrypted/decrypted form of the message:
 translated = ''
@@ -50,7 +50,7 @@ time.sleep(2)
 print("This is the message encrypted: ", translated)
 time.sleep(0.5)
 print("This is the original message: ", message)
-pyperclip.copy(translated)
+pyperclip.copy(translated) # this like will automatically copy the encrypted message to the clipboard on your computer
 time.sleep(2)
 print("Thanks for participating.")
 time.sleep(2)
