@@ -4,7 +4,7 @@
 import pyperclip, time
 
 # The string to be encryped/decrypted
-message = input('Enter a message you would like to encrypt: ')
+message = input('Enter a message your secret message: ')
 
 # The encryption/decryption key:
 key = 13
