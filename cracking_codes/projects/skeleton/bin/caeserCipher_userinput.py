@@ -47,7 +47,7 @@ print("........Loading........")
 time.sleep(2)
 print("Ready! Here it is: ")
 time.sleep(2)
-print("This is the message encrypted: ", translated)
+print("This is your secret message encrypted/decrpyted: ", translated)
 time.sleep(0.5)
 print("This is the original message: ", message)
 pyperclip.copy(translated) # this like will automatically copy the encrypted message to the clipboard on your computer
