@@ -10,7 +10,7 @@ message = input('Enter a message you would like to encrypt: ')
 key = 13
 
 # Whether the program encrypts or decrypts:
-mode = 'encrypt' # Set this to either 'encrypt' or ' decrypt
+mode = input("Now indicate whether you would to 'encrypt' or 'decrypt' the given message: ") # Have the user set this to either 'encrypt' or ' decrypt
 
 # Every possible symbol that can be encrypter:
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.' # In cryptography a symbol set is every possible symbol a cipher could contain
