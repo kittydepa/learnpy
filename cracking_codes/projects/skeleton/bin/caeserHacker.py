@@ -3,7 +3,7 @@
 
 ## Cracking the Caeser Cipher by *brute force*
 
-message = 'guv6Jv6Jz!J6rp5r7Jzr66ntrM' # example cipher text
+message = 'guv6Jv6Jz!J6rp5r7Jzr66ntrM' # example cipher text/ the text that you want to decrypt
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 
 # Loop through every possible key:
