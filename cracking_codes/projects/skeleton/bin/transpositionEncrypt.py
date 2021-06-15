@@ -16,10 +16,11 @@ def main():
     pyperclip.copy(ciphertext)
 
 
+
+# The function that actually does the encrypting:
 def encryptMessage(key, message):
     # Each string in ciphertext represents a column in the grid:
     ciphertext = [''] * key
-
 
     # Loop through each column in ciphertext:
     for column in range(key):
