@@ -20,9 +20,9 @@ def main():
 # The function that actually does the encrypting:
 def encryptMessage(key, message):
     # Each string in ciphertext represents a column in the grid:
-    ciphertext = [''] * key
+    ciphertext = [''] * key 
 
-    # Loop through each column in ciphertext:
+    # Loop through each column in ciphertext// adding text to each string along the columns
     for column in range(key):
         currentIndex = column
 
