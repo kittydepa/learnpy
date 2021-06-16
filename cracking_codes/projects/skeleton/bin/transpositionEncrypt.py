@@ -15,6 +15,9 @@ def main():
     # Copy the encrypted string in the ciphertext to the clipboard:
     pyperclip.copy(ciphertext)
 
+    print('Here was the original message: ', myMessage)
+
+
 
 
 # The function that actually does the encrypting:
