@@ -22,8 +22,10 @@ print('Press Ctrl-C to quit.') # See further down, that when a user does this, t
 ## Step 2: Set up the 'quit code' and infinite loop (to constantly print the coordinates of the mouse's position)
 try:
     while True:
-        #TODO: Get and print mouse coordinates
-        
+        # Get and print mouse coordinates
+        x, y = pyautogui.position()
+        positionStr = 'X: ' + str(x).rjust(4) + ' Y: '+ str(y).rjust(4)
+
 except KeyboardInterrupt:
     print('\nDone.')
 
