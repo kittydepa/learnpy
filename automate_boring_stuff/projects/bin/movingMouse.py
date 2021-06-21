@@ -4,3 +4,11 @@ Ch. 18 on Keyboard and Mouse Movement with GUI Automation
 '''
 
 import pyautogui
+## The following moves the cursor around in a square shape
+# for i in range(10):
+#     pyautogui.moveTo(100, 100, duration = 0.25)
+#     pyautogui.moveTo(200, 100, duration = 0.25)
+#     pyautogui.moveTo(200, 200, duration = 0.25)
+#     pyautogui.moveTo(100, 200, duration = 0.25)
+
+# Can also use .moveRel, which will move the cursor 'relative' to the latest position of the cursor
