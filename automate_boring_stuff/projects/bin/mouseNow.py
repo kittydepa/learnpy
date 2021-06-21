@@ -1,5 +1,5 @@
 '''
-Guided Project: "Where Is the Mouse Right Now?
+Guided Project: "Where Is the Mouse Right Now? p. 443
 From ch. 18 in No Starch Press book 'Automate the Boring Stuff with Python" 
 --------------------------------------------------------------------------------------------
 
