@@ -10,8 +10,8 @@ The code should do the following:
 - Call the position() function to obtain the current cooridnates
 - Erase the previously printed coordinates as the mouse moves around the screen
 - Handle the KeyboardInterrupt exception so the user can pres Ctrl+C to quit
-
 '''
+
 ## Step 1: Import the module
 #! python3
 #! mouseNow.py = Displays the mouse cursor's current position.
