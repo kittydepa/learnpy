@@ -11,10 +11,22 @@ The code should do the following:
 - Handle the KeyboardInterrupt exception so the user can pres Ctrl+C to quit
 
 '''
-
+## Step 1: Import the module
 #! python3
 #! mouseNow.py = Displays the mouse cursor's current position.
 import pyautogui
-print('Press Ctrl-C to quit.')
+print('Press Ctrl-C to quit.') # See further down, that when a user does this, this should catch the 'KeyboardInterrupt' exception
 
-#TODO: Get and print the mouse coordinates.
+
+
+## Step 2: Set up the 'quit code' and infinite loop (to constantly print the coordinates of the mouse's position)
+try:
+    while True:
+        #TODO: Get and print mouse coordinates
+        
+except KeyboardInterrupt:
+    print('\nDone.')
+
+
+
+## Step 3: Get and print the mouse coordinates
