@@ -37,4 +37,3 @@ except KeyboardInterrupt:
 
 
 
-## Step 3: Get and print the mouse coordinates
