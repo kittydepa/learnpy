@@ -26,6 +26,12 @@ try:
         # Get and print mouse coordinates
         x, y = pyautogui.position()
         positionStr = 'X: ' + str(x).rjust(4) + ' Y: '+ str(y).rjust(4)   # .rjust()will right-justify the strings, so they take up the same amount of space (e.g. if they have 1 or 3 digits)
+        
+        pixelColor = pyautogui.screenshot().getpixel((x, y))
+        positionStr += ' RGB: (' + str(pixelColor[0]).rjust(3)
+        positionStr += ', ' + str(pixelColor[1]).rjust(3)
+        positionStr += ', ' + str(pixelColor[2]).rjust(3) + ')'
+
         print(positionStr, end = '')                                      # 'end', to prevent the default newline character from being added to the end of the printed line.
         print('\b' * len(positionStr), end = '', flush = True)            # To erase the previous position corrdinates, use the \b backspace escape chacater, to erase a character at the end of the current line 
                                                                           # flush = T, calls the print \b backspace characters, otherwise the screen might not update the text as desired.
