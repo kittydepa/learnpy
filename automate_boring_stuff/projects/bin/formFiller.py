@@ -31,9 +31,21 @@ The full steps:
     8. After submitting the form, the browser will take you to a page where you will need to click a link to return to the form page.
 '''
 
+#! python3
+# formFiller.py - Automatically fills in the form
+import pyautogui, time
+
+
 
 
 ## Step 2: With the Google Form open, follow the steps from the book, and run the 'mouseNow.py' script to make note and store the coordinates 
+# Enter the correct coordinates for the following:
+nameField = () 
+submitButton = ()
+
+# Enter the correct *RGB* colour and coordinate for the following:
+submitButtonColour = ()
+submitAnotherLink = ()
 
 
 
