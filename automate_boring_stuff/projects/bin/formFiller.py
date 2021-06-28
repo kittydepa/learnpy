@@ -13,4 +13,39 @@ The code will need to do the following:
     - Handle the KeyboardInterrupt exception so the user can press CTRL-C to quit
 '''
 
-## Step 1: Figure out the steps yo
+
+
+
+## Step 1: Figure out the steps and coordinates
+'''
+See the book, page 432 for the steps needed to fill out the form. Basically, you will need to first click on the first text box of the form, and then you can just press TAB to continue on.
+The full steps:
+    1. Click the Name field, (you will use mouseNow.py to see and store the coordinates of this in the next step. On MacOS, you may need to click twice)
+    2. Type a name and then press TAB
+    3. Type a greatest fear and then press TAB
+    4. Press the down arrow key the correct number of times to select the answer you want to mark, (e.g., 1x for 'wand', 2x for 'amulet', 3x for 'crystal ball', and 4x for 'money')
+       Then press tab. For MacOS you need to press the down arrow key more than once, and on some browsers you may need to press ENTER as well.
+    5. Press the right arrow key to select the answer to the RoboCop qusetion. (e.g. Press it once for 2, twice for 3, etc., or just press the spacebar to select 1, which is selected by default. Then press TAB)
+    6. Type an additional comment and then press TAB
+    7. Press the ENDER key to "click" the Submit button
+    8. After submitting the form, the browser will take you to a page where you will need to click a link to return to the form page.
+'''
+
+
+
+## Step 2: With the Google Form open, follow the steps from the book, and run the 'mouseNow.py' script to make note and store the coordinates 
+
+
+
+
+## Step 3: Start typing data
+
+
+
+
+## Step 4: Handle select lists and radio buttons (lol wut)
+
+
+
+
+## Step 5: Submit the form and wait
