@@ -26,7 +26,6 @@ try:
         # Get and print mouse coordinates
         x, y = pyautogui.position()
         positionStr = 'X: ' + str(x).rjust(4) + ' Y: '+ str(y).rjust(4)   # .rjust()will right-justify the strings, so they take up the same amount of space (e.g. if they have 1 or 3 digits)
-        
         pixelColor = pyautogui.screenshot().getpixel((x, y))
         positionStr += ' RGB: (' + str(pixelColor[0]).rjust(3)
         positionStr += ', ' + str(pixelColor[1]).rjust(3)
