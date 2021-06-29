@@ -115,3 +115,15 @@ for person in formData:
 
 
 ## Step 5: Submit the form and wait
+    # Fill out the Additional Comments field
+    pyautogui.typewrite(person['comments'] + '\t')
+
+    # # Click Submit
+    # pyautogui.press('enter')
+
+    # # Wait until the form page has loaded
+    # print('Clicked Submit.')
+    # time.sleep(5)
+
+    # # Click the Submit another response link
+    # pyautogui.click(submitAnotherLink[0], submitAnotherLink[1])
