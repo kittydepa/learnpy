@@ -40,14 +40,21 @@ import pyautogui, time
 
 ## Step 2: With the Google Form open, follow the steps from the book, and run the 'mouseNow.py' script to make note and store the coordinates 
 # Enter the correct coordinates for the following:
-nameField = () 
-submitButton = ()
+nameField = (168, 908) 
+submitButton = (161, 1793)
 
 # Enter the correct *RGB* colour and coordinate for the following:
-submitButtonColour = ()
-submitAnotherLink = ()
+submitButtonColour = (130, 130, 130)
+submitAnotherLink = (260, 630)
 
 
+
+# TODO: Give the user a chance to kill the script.
+# TODO: Wait until the form page has loaded.
+# TODO: Fill out the Name field, and all other fields.
+# TODO: Click Submit.
+# TODO: Wait untl form page has loaded.
+# TODO: Click the Submit another response link.
 
 
 ## Step 3: Start typing data
