@@ -49,20 +49,67 @@ submitAnotherLink = (260, 630)
 
 
 
-# TODO: Give the user a chance to kill the script.
-# TODO: Wait until the form page has loaded.
-# TODO: Fill out the Name field, and all other fields.
-# TODO: Click Submit.
-# TODO: Wait untl form page has loaded.
-# TODO: Click the Submit another response link.
+
+## Step 3: a. Creating the data
+# In other cases, this data might be from a csv file or a website, and would require additional code. Here, it we will just use a dict.
+formData = [{'name': 'Alice', 'fear': 'eavesdroppers', 'source': 'wand', 'robocop': 4, 'comments': 'Tell Bob I said hi.'},
+            {'name': 'Bob', 'fear': 'bees', 'source': 'amulet', 'robocop': 4, 'comments': 'None'},
+            {'name': 'Carol', 'fear': 'puppets', 'source': 'crystal ball', 'robocop': 1, 'comments': 'I love u.'},
+            {'name': 'Alex M.', 'fear': 'ED-209', 'source': 'money', 'robocop': 5, 'comments': 'Protect the innocant. Serve the public trust. Uphold the law.'},
+           ]
+# Add a 0.5 second pause between each function call 
+pyautogui.PAUSE = 0.5
 
 
-## Step 3: Start typing data
+
+
+## Step 3: b. Start typing the data
+for person in formData:
+    # Give the user a chance to kill the script
+    print('>>> 5 SECOND PAUSE TO LET USER PRESS CTRL-C <<<')
+    time.sleep(5)
+
+    # Wait until the form page has loaded
+    while not pyautogui.pixelMatchesColor(submitButton[0], submitButton[1], submitButtonColour):
+        time.sleep(0.5)
+
+    print('Entering %s info...' %(person['name']))
+    pyautogui.click(nameField[0], nameField[1])
+
+    # Fill out the Name field
+    pyautogui.typewrite(person['name'] + '\t')
+
+    # Fill out the Greatest Fear(s) field
+    pyautogui.typewrite(person['fear'] + '\t')
 
 
 
 
-## Step 4: Handle select lists and radio buttons (lol wut)
+## Step 4: Handle select lists and radio buttons -  Here, we will use the keyboard arrows to select the desired response
+    # Fill out the Source of Wizard Power field
+    # Note that for this question, it is a drop down menu, that's why we just have the keyboard press down arrow, instead of having to locate EACH response's coordinates
+    if person['source'] == 'wand':
+        pyautogui.typewrite(['down', '\t'])
+    elif person['source'] == 'amulet':
+        pyautogui.typewrite(['down', 'down', '\t'])
+    elif person['source'] == 'crystal ball':
+        pyautogui.typewrite(['down', 'down', 'down', '\t'])
+    elif person['source'] == 'money':
+        pyautogui.typewrite(['down', 'down', 'down', 'down', '\t'])
+    
+
+    # Fill out the RoboCop field
+    # Similarly here, we just have the right arrow to select the response, with the default response being '1', that's why we do not instruct PyAutoGUI to press an arrow key, just a space
+    if person['robocop'] == 1:
+        pyautogui.typewrite([' ', '\t'])
+    elif person['robocop'] == 2:
+        pyautogui.typewrite('right', '\t')
+    elif person['robocop'] == 3:
+        pyautogui.typewrite('right', 'right', '\t')
+    elif person['robocop'] == 4:
+        pyautogui.typewrite('right', 'right', 'right', '\t')
+    elif person['robocop'] == 5:
+        pyautogui.typewrite('right', 'right', 'right', 'right', '\t')
 
 
 
