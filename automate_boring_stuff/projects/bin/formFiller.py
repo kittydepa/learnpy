@@ -59,7 +59,7 @@ submitAnotherLink = [260, 630]
 formData = [{'name': 'Alice', 'fear': 'eavesdroppers', 'source': 'wand', 'robocop': 4, 'comments': 'Tell Bob I said hi.'},
             {'name': 'Bob', 'fear': 'bees', 'source': 'amulet', 'robocop': 4, 'comments': 'None'},
             {'name': 'Carol', 'fear': 'puppets', 'source': 'crystal ball', 'robocop': 1, 'comments': 'I love u.'},
-            {'name': 'Alex M.', 'fear': 'ED-209', 'source': 'money', 'robocop': 5, 'comments': 'Protect the innocant. Serve the public trust. Uphold the law.'},
+            {'name': 'Alex M.', 'fear': 'ED-209', 'source': 'money', 'robocop': 5, 'comments': 'Protect the innocent. Serve the public trust. Uphold the law.'},
            ]
 # Add a 0.5 second pause between each function call 
 pyautogui.PAUSE = 1
@@ -82,10 +82,10 @@ for person in formData:
     pyautogui.click(nameField[0], nameField[1])
 
     # Fill out the Name field
-    pyautogui.typewrite(person['name'] + '\t')
+    pyautogui.typewrite(person['name'] + '\t', interval = 0.25)
 
     # Fill out the Greatest Fear(s) field
-    pyautogui.typewrite(person['fear'] + '\t')
+    pyautogui.typewrite(person['fear'] + '\t', interval = 0.25)
 
 
 
@@ -103,41 +103,41 @@ for person in formData:
     if person['source'] == 'wand':
         pyautogui.hotkey('down', 'enter', 'tab', interval = 0.5)
     elif person['source'] == 'amulet':
-        pyautogui.hotkey('down', 'down', '\t')
+        pyautogui.hotkey('down', 'down',  'enter', 'tab', interval = 0.5)
     elif person['source'] == 'crystal ball':
-        pyautogui.typewrite(['down', 'down', 'down', '\t'])
+        pyautogui.hotkey('down', 'down', 'down',  'enter', 'tab', interval = 0.5)
     elif person['source'] == 'money':
-        pyautogui.typewrite(['down', 'down', 'down', 'down', '\t'])
+        pyautogui.hotkey('down', 'down', 'down', 'down',  'enter', 'tab', interval = 0.5)
     
 
     # Fill out the RoboCop field
     # Similarly here, we just have the right arrow to select the response, with the default response being '1', that's why we do not instruct PyAutoGUI to press an arrow key, just a space
     if person['robocop'] == 1:
-        pyautogui.typewrite([' ', '\t'])
+        pyautogui.hotkey('space', 'tab', 'tab', interval = 0.25)
     elif person['robocop'] == 2:
-        pyautogui.typewrite('right', '\t')
+        pyautogui.hotkey('right', 'tab', 'tab', interval = 0.25)
     elif person['robocop'] == 3:
-        pyautogui.typewrite('right', 'right', '\t')
+        pyautogui.hotkey('right', 'right', 'tab', 'tab', interval = 0.25)
     elif person['robocop'] == 4:
-        pyautogui.hotkey('right', 'right', 'right', 'tab', interval = 0.25)
-    # elif person['robocop'] == 5:
-    #     pyautogui.typewrite('right', 'right', 'right', 'right', '\t') # Doesn't seem to work? Seems like max number of arguments is 4... wtf
+        pyautogui.hotkey('right', 'right', 'right', 'tab', 'tab', interval = 0.25)
+    elif person['robocop'] == 5:
+        pyautogui.hotkey('right', 'right', 'right', 'right', 'tab', 'tab', interval = 0.25)
 
 
 
 
 ## Step 5: Submit the form and wait
     # Fill out the Additional Comments field
-    pyautogui.typewrite(person['comments'] + '\t')
+    pyautogui.typewrite(person['comments'] + '\t', interval = 0.25)
 
-    # # Click Submit
-    # pyautogui.press('enter')
+    # Click Submit
+    pyautogui.press('enter')
 
-    # # Wait until the form page has loaded
-    # print('Clicked Submit.')
-    # time.sleep(5)
+    # Wait until the form page has loaded
+    print('Clicked Submit.')
+    time.sleep(5)
 
-    # # Click the Submit another response link
-    # pyautogui.click(submitAnotherLink[0], submitAnotherLink[1])
+    # Click the Submit another response link
+    pyautogui.click(submitAnotherLink[0], submitAnotherLink[1])
 
 
