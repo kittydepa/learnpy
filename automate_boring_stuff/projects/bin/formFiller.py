@@ -12,7 +12,9 @@ The code will need to do the following:
     - Call pyautogui.typewrite() to enter text into the fields
     - Handle the KeyboardInterrupt exception so the user can press CTRL-C to quit
 
-# https://pyautogui.readthedocs.io/en/latest/keyboard.html
+See the following for the LATEST doc:
+    https://pyautogui.readthedocs.io/en/latest/quickstart.html 
+    https://pyautogui.readthedocs.io/en/latest/keyboard.html
 '''
 
 
@@ -92,9 +94,9 @@ for person in formData:
     # Fill out the Source of Wizard Power field
     # Note that for this question, it is a drop down menu, that's why we just have the keyboard press down arrow, instead of having to locate EACH response's coordinates
     if person['source'] == 'wand':
-        pyautogui.press(['down', 'enter', '\t'])
+        pyautogui.hotkey('down', 'enter', 'tab', interval = 0.5)
     elif person['source'] == 'amulet':
-        pyautogui.typewrite(['down', 'down', '\t'])
+        pyautogui.typewrite('down', 'down', '\t')
     elif person['source'] == 'crystal ball':
         pyautogui.typewrite(['down', 'down', 'down', '\t'])
     elif person['source'] == 'money':
@@ -110,7 +112,7 @@ for person in formData:
     elif person['robocop'] == 3:
         pyautogui.typewrite('right', 'right', '\t')
     elif person['robocop'] == 4:
-        pyautogui.typewrite('right', 'right', 'right', '\t')
+        pyautogui.hotkey('right', 'right', 'right', 'tab', interval = 0.25)
     # elif person['robocop'] == 5:
     #     pyautogui.typewrite('right', 'right', 'right', 'right', '\t') # Doesn't seem to work? Seems like max number of arguments is 4... wtf
 
