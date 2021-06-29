@@ -11,6 +11,8 @@ The code will need to do the following:
     - Call pyautogui.click() to click the form and Submit button
     - Call pyautogui.typewrite() to enter text into the fields
     - Handle the KeyboardInterrupt exception so the user can press CTRL-C to quit
+
+# https://pyautogui.readthedocs.io/en/latest/keyboard.html
 '''
 
 
@@ -40,12 +42,12 @@ import pyautogui, time
 
 ## Step 2: With the Google Form open, follow the steps from the book, and run the 'mouseNow.py' script to make note and store the coordinates 
 # Enter the correct coordinates for the following:
-nameField = (168, 908) 
-submitButton = (161, 1793)
+nameField = [168, 908]  # OOPS, THESE NEED TO BE A LIST, NOT A TUPLE, SO USE [] INSTEAD OF (), except for RGB/colours
+submitButton = [161, 1793]
 
 # Enter the correct *RGB* colour and coordinate for the following:
-submitButtonColour = (130, 130, 130)
-submitAnotherLink = (260, 630)
+submitButtonColor = (130, 130, 130)
+submitAnotherLink = [260, 630]
 
 
 
@@ -58,7 +60,7 @@ formData = [{'name': 'Alice', 'fear': 'eavesdroppers', 'source': 'wand', 'roboco
             {'name': 'Alex M.', 'fear': 'ED-209', 'source': 'money', 'robocop': 5, 'comments': 'Protect the innocant. Serve the public trust. Uphold the law.'},
            ]
 # Add a 0.5 second pause between each function call 
-pyautogui.PAUSE = 0.5
+pyautogui.PAUSE = 1
 
 
 
@@ -70,8 +72,9 @@ for person in formData:
     time.sleep(5)
 
     # Wait until the form page has loaded
-    while not pyautogui.pixelMatchesColor(submitButton[0], submitButton[1], submitButtonColour):
-        time.sleep(0.5)
+    # while not pyautogui.pixelMatchesColor(submitButton[0], submitButton[1], submitButtonColor):
+    # while not pyautogui.pixelMatchesColor(161, 1793, (130, 130, 130)):
+    #     time.sleep(0.5)
 
     print('Entering %s info...' %(person['name']))
     pyautogui.click(nameField[0], nameField[1])
@@ -89,7 +92,7 @@ for person in formData:
     # Fill out the Source of Wizard Power field
     # Note that for this question, it is a drop down menu, that's why we just have the keyboard press down arrow, instead of having to locate EACH response's coordinates
     if person['source'] == 'wand':
-        pyautogui.typewrite(['down', '\t'])
+        pyautogui.press(['down', 'enter', '\t'])
     elif person['source'] == 'amulet':
         pyautogui.typewrite(['down', 'down', '\t'])
     elif person['source'] == 'crystal ball':
@@ -108,8 +111,8 @@ for person in formData:
         pyautogui.typewrite('right', 'right', '\t')
     elif person['robocop'] == 4:
         pyautogui.typewrite('right', 'right', 'right', '\t')
-    elif person['robocop'] == 5:
-        pyautogui.typewrite('right', 'right', 'right', 'right', '\t')
+    # elif person['robocop'] == 5:
+    #     pyautogui.typewrite('right', 'right', 'right', 'right', '\t') # Doesn't seem to work? Seems like max number of arguments is 4... wtf
 
 
 
