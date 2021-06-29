@@ -91,12 +91,19 @@ for person in formData:
 
 
 ## Step 4: Handle select lists and radio buttons -  Here, we will use the keyboard arrows to select the desired response
+    '''
+    NOTE: There was an error running the program when it match exactly what was in the book. That is why my code looks different.
+    For the Wizard and RoboCop section, got errors when using .typewrite()
+    Used .hotkey() instead, and included a slower interval to prevent errors, and that seems to work  smoothly.
+    Additionally, don't want to repeat writing hotkey buttons, but seems like you can't to write e.g. 'down', presses = 3 if a different hotkey needs to be pressed (???)
+    '''
+    
     # Fill out the Source of Wizard Power field
     # Note that for this question, it is a drop down menu, that's why we just have the keyboard press down arrow, instead of having to locate EACH response's coordinates
     if person['source'] == 'wand':
         pyautogui.hotkey('down', 'enter', 'tab', interval = 0.5)
     elif person['source'] == 'amulet':
-        pyautogui.typewrite('down', 'down', '\t')
+        pyautogui.hotkey('down', 'down', '\t')
     elif person['source'] == 'crystal ball':
         pyautogui.typewrite(['down', 'down', 'down', '\t'])
     elif person['source'] == 'money':
@@ -132,3 +139,5 @@ for person in formData:
 
     # # Click the Submit another response link
     # pyautogui.click(submitAnotherLink[0], submitAnotherLink[1])
+
+
