@@ -74,7 +74,7 @@ pyautogui.PAUSE = 1
 for person in formData:
     # Give the user a chance to kill the script
     print('>>> 5 SECOND PAUSE TO LET USER PRESS CTRL-C <<<')
-    time.sleep(5)
+    time.sleep(8)
 
     # Wait until the form page has loaded
     # while not pyautogui.pixelMatchesColor(submitButton[0], submitButton[1], submitButtonColor):
