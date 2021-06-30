@@ -8,7 +8,7 @@ Will print the lap #, the total time, and lap time.
 import time
 
 # Display program's instructions
-print('Press ENTER to begin. Afterwards, press ENTER to "click" the stopwatch. \n Press Ctrl-C to quit.')
+print('Press ENTER to begin. Afterwards, press ENTER to "click" the stopwatch. \nPress Ctrl-C to quit.')
 input()                # pressing Enter to begin
 print('Started.')
 
