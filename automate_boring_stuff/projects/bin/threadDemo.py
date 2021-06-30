@@ -9,3 +9,22 @@ threadObj = threading.Thread(target = takeANap)
 threadObj.start()
 
 print('End of program.')
+
+
+'''
+When we run this program, we see first, 
+'Start of Program.'
+'End of Program.'
+'Wake up!'
+
+Notice how even though 'End of program.' is the last line of code, it is the second thing to print.
+This is because we are storying the function takeANap as another thread - to allow for multithreading to occur.
+
+Because, if we took out the threadObj lines, then the output would follow in the same order as it was written:
+So 'Start of program' would first, then takeANap() - which includes waitingn for 5 sec, then print 'Wake Up! 
+And then *lastly* printing 'End of program.'
+
+Normally, a program will end when the single thread has ended (e.g., the last line has been executed), but using threadObj.start() opens up a new thread for that functions execution.
+
+Since we *are* using the threadObj, and set the target to tbe the takeANap() function, we can run what comes after that in a diff thread (???)
+'''
