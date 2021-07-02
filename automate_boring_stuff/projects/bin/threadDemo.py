@@ -28,3 +28,21 @@ Normally, a program will end when the single thread has ended (e.g., the last li
 
 Since we *are* using the threadObj, and set the target to tbe the takeANap() function, we can run what comes after that in a diff thread (???)
 '''
+
+
+
+
+
+'''
+Ch. 15 pg. 349
+Another example, for passing arguments to the thread's target function.
+Basically, you MUST use 'args' for arguments that are in the function, and 'kwargs' for the keywords.
+'''
+
+# If this is your target function:
+print('Cats', 'Dogs', 'Frogs', sep = ' & ')
+
+# This is how you would pass the function in another thread:
+import threading
+threadObj = threading.Thread(target = print, args = ['Cats', 'Dogs', 'Frogs'], kwargs = {'sep': ' & '})
+threadObj.start()
