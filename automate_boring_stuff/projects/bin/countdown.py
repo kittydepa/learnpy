@@ -37,4 +37,7 @@ subprocess.Popen(['start', 'alarm.wav'], shell = True)
 '''
 Alternatively, you could also use Popen() to open/create a pop-up window,
 with a text file, that says something like 'Break time is over!'
+
+You can also use the timedelta object for a long-term countdown, to measure the
+number of days, hours, min, and seconds until some point in the future.
 '''
