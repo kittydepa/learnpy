@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Kitty\Desktop\learnpy\automate_boring_stuff\projects\bin\tracebackPractice.py", line 3, in <module>
+    raise Exception('This is the error message, you fool.')
+Exception: This is the error message, you fool.
