@@ -19,3 +19,10 @@ else:
         print('You got it!')
     else:
         print('Nope. Game over.')
+
+
+'''
+Record of Issues:
+    1. Always prints as incorrect??? hmm...
+    2. Guess is spelled incorrectly the second time.
+'''
