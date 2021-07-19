@@ -3,3 +3,8 @@
  2021-07-18 11:46:48,899 - WARNING - An error message is about to be logged.
  2021-07-18 11:46:48,899 - ERROR - An error has occurred.
  2021-07-18 11:46:48,899 - CRITICAL - The program is unable to recover.
+ 2021-07-19 13:04:57,212 - DEBUG - Some debugging details.
+ 2021-07-19 13:04:57,213 - INFO - The logging module is working.
+ 2021-07-19 13:04:57,213 - WARNING - An error message is about to be logged.
+ 2021-07-19 13:04:57,213 - ERROR - An error has occurred.
+ 2021-07-19 13:04:57,244 - CRITICAL - The program is unable to recover.
