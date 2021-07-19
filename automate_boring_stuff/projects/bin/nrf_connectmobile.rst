@@ -17,8 +17,8 @@ Note:
 The discovered devices list is not automatically refreshed when they stop advertising. Whenever you have problems connecting to a device from the list, try refreshing the list.
 
 4. Expand the Secure DFU Service section. There are two icons to the right of the DUF Control Point area.
-a.	The icon to the right turns notifications on/off. Make sure they are enabled (the icon must be crossed)
-#	Tap the icon to the left to put the device into bootloader (DFU) mode. Tap OK when prompted to reset the device to bootloader. 
+a. The icon to the right turns notifications on/off. Make sure they are enabled (the icon must be crossed)
+b. Tap the icon to the left to put the device into bootloader (DFU) mode. Tap OK when prompted to reset the device to bootloader. 
 
 <IMAGE 1> <IMAGE 2>
 
@@ -31,8 +31,8 @@ The device now enters DFU mode. Go to the Scanner tab and run a new scan. A devi
 <IMAGE 3>
 Running DFU.
 
-# Select Distribution packet (ZIP) and navigate to the package that you previously uploaded to your mobile.
+6. Select Distribution packet (ZIP) and navigate to the package that you previously uploaded to your mobile.
 <IMAGE 4>
 Uploading the ZIP file.
 
-# The package is now uploaded to the device.
+7. The package is now uploaded to the device.
