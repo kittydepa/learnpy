@@ -12,3 +12,12 @@ second = input()
 print('Enter the third number to add: ')
 third = input()
 print('The sum is ' + first + second + third)
+
+
+
+'''
+How to fix the code:
+ - Need to convert the user input variables into integers. 
+   Then you can add them together to get the sum. 
+
+'''
