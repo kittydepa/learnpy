@@ -31,8 +31,8 @@ The device now enters DFU mode. Go to the Scanner tab and run a new scan. A devi
 <IMAGE 3>
 Running DFU.
 
-6. Select Distribution packet (ZIP) and navigate to the package that you previously uploaded to your mobile.
+# Select Distribution packet (ZIP) and navigate to the package that you previously uploaded to your mobile.
 <IMAGE 4>
 Uploading the ZIP file.
 
-7. The package is now uploaded to the device.
+# The package is now uploaded to the device.
