@@ -18,9 +18,18 @@ while guess not in ('heads', 'tails'):
     
 logging.debug(f'Try 1. Participant guess is: {guess}.')
 
-toss = random.randint(0, 1) # 0 is tails, 1 in heads
+
+# Need to convert toss to a string! 
+coin_flip = random.randint(0, 1) # 0 is tails, 1 in heads
+if coin_flip == 0:
+    toss = 'tails'
+else:
+    toss = 'heads'
+
+
 logging.debug(f'PRE-randomisation. The toss is: {toss}')
 logging.debug('0 is tails, and 1 is heads')
+
 
 if toss == guess:
     print('You got it!')
