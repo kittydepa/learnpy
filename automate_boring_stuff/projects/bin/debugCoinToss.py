@@ -29,19 +29,18 @@ else:
     toss = 'heads'
 
 
-logging.debug(f'PRE-randomisation. The toss is: {toss}')
-logging.debug('0 is tails, and 1 is heads')
+logging.debug(f'The toss is: {toss}')
 
 
 if toss == guess:
     print('You got it!')
-    logging.debug(f'POST-randomisation. The toss is: {toss}')
+    logging.debug(f'The toss is: {toss}')
 
 else:
     print('Nope! Guess again!')
     guess = input('> ')
     logging.debug(f'Try 2. Participant guess is: {guess}.')
-    logging.debug(f'POST-randomisation. The toss is: {toss}')
+    logging.debug(f'The toss is: {toss}')
     if toss == guess:
         print('You got it!')
     else:
