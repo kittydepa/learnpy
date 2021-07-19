@@ -15,7 +15,8 @@ guess = ''
 while guess not in ('heads', 'tails'):
     print('Guess the coin toss! Enter heads or tails: ')
     guess = input('> ')
-    logging.debug(f'Try 1. Participant guess is: {guess}.')
+    
+logging.debug(f'Try 1. Participant guess is: {guess}.')
 
 toss = random.randint(0, 1) # 0 is tails, 1 in heads
 logging.debug(f'PRE-randomisation. The toss is: {toss}')
