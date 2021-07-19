@@ -55,6 +55,8 @@ else:
 Record of Issues:
     1. Always prints as incorrect??? hmm...
     2. Guess is spelled incorrectly the second time.
+    3. Variable 'toss' was originally saved as an int, while 'guess' is a string...lol
+       They need to be the same type. 
 '''
 
 '''
