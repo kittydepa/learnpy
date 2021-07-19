@@ -2,6 +2,8 @@
 Ch 10 - Debugging from 'Automate the Boring Stuff with Python' No Starch Press
 Practice Project: Debugging Coin Toss Game
 Try to find and fix the bugs so that the program will work correctly.
+
+See below for notes
 '''
 import logging
 import random
@@ -44,6 +46,10 @@ else:
         print('You got it!')
     else:
         print('Nope. Game over.')
+
+
+
+
 
 
 '''
