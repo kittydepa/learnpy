@@ -42,3 +42,16 @@ Record of Issues:
     1. Always prints as incorrect??? hmm...
     2. Guess is spelled incorrectly the second time.
 '''
+
+'''
+Notes:
+## Check that the while statement works???
+
+x = 'heads'
+y = ('heads', 'tails')
+
+if x in y:
+    print('yes')  ## It does
+else:
+    print('no')
+'''
