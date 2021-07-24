@@ -7,11 +7,11 @@ Most of the files in the `learnpy` main folder are from [*Learn Python 3 the Har
 Some examples of the exercises in this book include (but is not limited to):<br>
 - data types
 - for and while loops
-- dicts
-- inheritance
+- inheritance and composition
 - creating text-based adventure games
 - testing with `PyTest`
 - setting up a virtual environment
+- an intro to building a webpage via `flask`
 <br>
 
 My learnings from these exercises helped me move forward with my other programming learnings with more confidence since I was able to learn many of the programming basics through learning Python. 
