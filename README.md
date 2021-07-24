@@ -11,6 +11,9 @@ Some examples of the exercises in this book include (but is not limited to):<br>
 - testing with `PyTest`
 - setting up a virtual environment
 - an intro to building a webpage via `flask`
-<br>
 
+<br>
+In this main folder, you will also find subfolders that include other books and/or projects I have completed.
+<br>
+<br>
 My learnings from these exercises helped me move forward with my other programming learnings with more confidence since I was able to learn many of the programming basics through learning Python. 
