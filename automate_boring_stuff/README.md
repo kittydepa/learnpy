@@ -9,7 +9,7 @@ Some of the tasks covered in this book included:
 - and so much more!
 
 <br>
-This has by far been my favorite set of projects I have done within Python. It is beginner-friendly and helped me apply and firmly understand the basic concepts of Python and OOP in general.<br>
+This has by far been my favorite set of projects I have done within Python. They are beginner-friendly and have helped me apply and firmly understand the basic concepts of Python and OOP in general.<br>
 Learning how to automate tasks with Python has opened my curiousities and ambitions more by wanting to automate all the things, for general efficiency. <br><br>
 
-I look forward to applying these learnings in my everyday and professional life to save both time and energy towards the less tedious tasks that may arise.
+I look forward to applying these learnings in my everyday and professional life to save both time and energy towards the tedious tasks that may arise.
