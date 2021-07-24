@@ -5,8 +5,8 @@ These mainly include guided projects from various educational books, such as, [*
 The purpose of these assignments is to help me learn Python in a fun and goal-oriented way, with exercises and small projects.<br>
 Most of the files in this `learnpy` main folder are from [*Learn Python 3 the Hard Way*](https://shop.learncodethehardway.org/) and was the first Python book I picked up to grasp the basic syntax and concepts in Python. <br><br>
 Some examples of the exercises in this book include (but are not limited to):<br>
-- data types
-- inheritance and composition
+- going over data types
+- applying inheritance and composition concepts
 - creating text-based adventure games
 - testing with `PyTest`
 - setting up a virtual environment
