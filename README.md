@@ -10,5 +10,6 @@ Some examples of the exercises in this book include (but is not limited to):<br>
 - dicts
 - inheritance
 - creating text-based adventure games
-<br><br>
-My learnings from these exercises helped me move forward with my Python learnings with more confidence since I was able to learn many of the programming basics through learning Python. 
+<br>
+
+My learnings from these exercises helped me move forward with my other programming learnings with more confidence since I was able to learn many of the programming basics through learning Python. 
