@@ -12,6 +12,13 @@ So the code will:
     - call the webbrowser.open() function to open the webbrowser
 -----------------------------------------------------------------------------------------
 '''
+#! python3
+#! mapIt.py - Launched a map in the browser using an address from the command line or clipboard
 
-import webbrowser
-webbrowser.open('http://inventwithpython.com/')
+
+import webbrowser, sys
+if len(sys.argv) > 1:
+    # Get address from command line.
+    address = ' '.join(sys.argv[1:])
+
+# Get address from clipboard
