@@ -24,5 +24,7 @@ if len(sys.argv) > 1:
 else:
     # Get address from clipboard
     address = pyperclip.paste()
+    # If there is no address given in the command line, then it will assume the address is in the clipboard...!
+
 
 webbrowser.open('https://www.google.com/maps/place/' + address)
