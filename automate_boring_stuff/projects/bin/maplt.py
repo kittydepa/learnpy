@@ -28,3 +28,17 @@ else:
 
 
 webbrowser.open('https://www.google.com/maps/place/' + address)
+
+
+
+
+
+
+
+
+'''
+Ideas for Similar Programs (as suggested on pg 236)
+    - open all links on a page in separate browser tabs
+    - open the browser to the URL for your local weather
+    - open several social network sites that you regularly check
+'''
