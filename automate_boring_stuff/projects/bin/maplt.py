@@ -16,9 +16,13 @@ So the code will:
 #! mapIt.py - Launched a map in the browser using an address from the command line or clipboard
 
 
-import webbrowser, sys
+import webbrowser, sys, pyperclip
 if len(sys.argv) > 1:
     # Get address from command line.
-    address = ' '.join(sys.argv[1:])
+    address = ' '.join(sys.argv[1:])  # This stores a list of the program's file name and command arguments, and since you don't want the program file name, you use [1:] to skip over that argument
 
-# Get address from clipboard
+else:
+    # Get address from clipboard
+    address = pyperclip.paste()
+
+webbrowser.open('https://www.google.com/maps/place/' + address)
