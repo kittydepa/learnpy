@@ -28,8 +28,17 @@ res.raise_for_status()
 
 
 ## Step 2: Find all the results
+# Retrieve top search result links
+soup = bs4.BeautifulSoup(res.text)
+
+# Open a browser tab for each result
+linkElems = soup.select('.r a') 
+# based on the inpsecting relement, it seems like there is a class "r" used for the search results
+# The above will find all <a> elements that are within an element that has the "r" CSS class
 
 
 
-
-## Step 3: Open web browsers for each result
+## Step 3: Open web browsers for each result (the first 5 results)
+numOpen = min(5, len(linkElems)) # min will pull up the smallest of the integer or float arguments it passes
+for i in range(numOpen):
+    webbrowser.open('http://google.com' + linkElems[i].get('href'))
