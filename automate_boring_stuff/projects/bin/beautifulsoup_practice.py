@@ -15,3 +15,12 @@ type(noStarchSoup)
 exampleFile = open('example.html')
 exampleSoup = bs4.BeautifulSoup(exampleFile)
 type(exampleSoup)
+
+
+# From page 247 - enter each line one by one! woo
+elems = exampleSoup.select('#author')
+len(elems)
+type(elems[0])
+elems[0].getText()
+str(elems[0])
+elems[0].attrs
