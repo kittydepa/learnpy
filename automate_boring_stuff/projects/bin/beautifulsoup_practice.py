@@ -42,3 +42,13 @@ str(pElems[1])
 pElems[1].getText()
 str(pElems[2])
 pElems[2].getText()
+
+
+
+# Getting fata from an element's attributes
+soup = bs4.BeautifulSoup(open('example.html'))
+spanElem = soup.select('span')[0]
+str(spanElem)
+spanElem.get('id')
+spanElem.get('some_nonexistent_addr') == None
+spanElem.attrs
