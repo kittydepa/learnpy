@@ -17,7 +17,7 @@ exampleSoup = bs4.BeautifulSoup(exampleFile)
 type(exampleSoup)
 
 
-# From page 247 - enter each line one by one! woo
+# From page 247 - enter each line one by one! woo - using a CSS selector with the .select() method
 elems = exampleSoup.select('#author')
 len(elems)
 type(elems[0])
