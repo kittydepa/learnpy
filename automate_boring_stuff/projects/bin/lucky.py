@@ -22,9 +22,14 @@ import requests, sys, webbrowser, bs4
 
 ## Step 1: Get the command line arguments and request the search page
 print('Googling...') # Display text while downloading the Google page
-res = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]))
+url = 'http://google.com/search?q=' + ' '.join(sys.argv[1:])
+print(url)
+res = requests.get(url)
 res.raise_for_status()
-
+#print(res.text)
+# with open("./wtf.html", "w") as f:
+#     f.write(res.text)
+# sys.exit()
 
 
 ## Step 2: Find all the results
@@ -32,10 +37,10 @@ res.raise_for_status()
 soup = bs4.BeautifulSoup(res.text)
 
 # Open a browser tab for each result
-linkElems = soup.select('.r a') 
+linkElems = soup.select('a') 
 # based on the inpsecting relement, it seems like there is a class "r" used for the search results
 # The above will find all <a> elements that are within an element that has the "r" CSS class
-
+print(linkElems)
 
 
 ## Step 3: Open web browsers for each result (the first 5 results)
