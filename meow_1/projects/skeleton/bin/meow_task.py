@@ -1,5 +1,5 @@
 '''
-My attempt the task
+My attempt at the task
 Additional resources: 
     - https://realpython.com/command-line-interfaces-python-argparse/ 
 
