@@ -80,18 +80,37 @@ parser = argparse.ArgumentParser()
 #     print(answer)
 # Note that for the above, the order doesn't matter, so the user can enter into the command line e.g., "-v 3" or, "--verbose 3", "3 -v" etc.
 
-## Making the program handle multiple verbosity values!
-parser.add_argument("square", type = int,
-                    help = "display a square of a given number")
-parser.add_argument("-v", "--verbosity", type = int, choices = [0, 1, 2], # int for the different versions the user can request to choose from for the output
-                    help = "increase output verbosity")
+
+
+
+# ## Making the program handle multiple verbosity values!
+# parser.add_argument("square", type = int,
+#                     help = "display a square of a given number")
+# parser.add_argument("-v", "--verbosity", type = int, choices = [0, 1, 2], # int for the different versions the user can request to choose from for the output
+#                     help = "increase output verbosity")
+# args = parser.parse_args()
+# answer = args.square ** 2
+
+# if args.verbosity == 2:
+#     print("the square of {} equals {}".format(args.square, answer))
+# elif args.verbosity == 1:
+#     print("{}^2 == {}".format(args.square, answer))
+# else:
+#     print(answer)
+
+
+
+## Now will use verbosity levels to display *more* text, instead of just *changing* the text
+parser.add_argument("x", type = int, help = "the base")
+parser.add_argument("y", type = int, help = "the exponent")
+parser.add_argument("-v", "--verbosity", action = "count", default = 0)
+
 args = parser.parse_args()
-answer = args.square ** 2
+answer = args.x ** args.y
 
-if args.verbosity == 2:
-    print("the square of {} equals {}".format(args.square, answer))
-elif args.verbosity == 1:
-    print("{}^2 == {}".format(args.square, answer))
-else:
-    print(answer)
+if args.verbosity >= 2:
+    print("Running '{}'".format(__file__))
+if args.verbosity >= 1:
+    print("{}^{} == ".format(args.x, args.y), end = "")
 
+print(answer)
