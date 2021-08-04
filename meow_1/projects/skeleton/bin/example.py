@@ -67,15 +67,31 @@ parser = argparse.ArgumentParser()
 # if args.verbose:
 #     print("verbosity turned on")
 
+# parser.add_argument("square", type = int,
+#                     help = "display a square of a given number")
+# parser.add_argument("-v", "--verbose", action = "store_true",
+#                     help = "increase output verbosity")
+# args = parser.parse_args()
+# answer = args.square ** 2
+
+# if args.verbose:
+#     print("the square of {} equals {}".format(args.square, answer))
+# else:
+#     print(answer)
+# Note that for the above, the order doesn't matter, so the user can enter into the command line e.g., "-v 3" or, "--verbose 3", "3 -v" etc.
+
+## Making the program handle multiple verbosity values!
 parser.add_argument("square", type = int,
                     help = "display a square of a given number")
-parser.add_argument("-v", "--verbose", action = "store_true",
+parser.add_argument("-v", "--verbosity", type = int, # int for the different versions the user can request to choose from for the output
                     help = "increase output verbosity")
 args = parser.parse_args()
 answer = args.square ** 2
 
-if args.verbose:
+if args.verbosity == 2:
     print("the square of {} equals {}".format(args.square, answer))
+elif args.verbosity == 1:
+    print("{}^2 == {}".format(args.square, answer))
 else:
     print(answer)
-# Note that the order doesn't matter, so the user can enter into the command line e.g., "-v 3" or, "--verbose 3", "3 -v" etc.
+
