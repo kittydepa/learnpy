@@ -83,7 +83,7 @@ parser = argparse.ArgumentParser()
 ## Making the program handle multiple verbosity values!
 parser.add_argument("square", type = int,
                     help = "display a square of a given number")
-parser.add_argument("-v", "--verbosity", type = int, # int for the different versions the user can request to choose from for the output
+parser.add_argument("-v", "--verbosity", type = int, choices = [0, 1, 2], # int for the different versions the user can request to choose from for the output
                     help = "increase output verbosity")
 args = parser.parse_args()
 answer = args.square ** 2
