@@ -127,6 +127,8 @@ parser = argparse.ArgumentParser()
 # Will also introduce the --quiet option, which is the oppositve of --verbose
 # Note that the user cannot combint these two, as they are *mutally_exclusive*, so you cannot do both -v and -q, (or -vq, or any other combo)
 
+parser = argparse.ArgumentParser(description = "Calculate X to the power of Y")
+
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-v", "--verbose", action = "store_true")
 group.add_argument("-q", "--quiet", action = "store_true")
