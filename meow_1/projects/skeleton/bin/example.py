@@ -7,6 +7,7 @@ Notes for the task:
     - use module 'argparse' (https://docs.python.org/3/library/argparse.html)
 '''
 
+
 # # Here is an implementation of a command line interface WITHOUT using the 'argparse' library
 # # The program will take a command line input and 'ls' list that directory
 # import os, sys
@@ -27,7 +28,9 @@ Notes for the task:
 
 # print('\n'.join(os.listdir(input_path)))
 
+
 # -------------------------------------------------------------------------------
+
 
 # # How the code above can be improved using 'argparse'
 # import argparse
@@ -54,9 +57,7 @@ Notes for the task:
 # print('\n'.join(os.listdir(input_path)))
 
 
-
 # -------------------------------------------------------------------------------
-
 
 
 import argparse
@@ -81,6 +82,7 @@ parser = argparse.ArgumentParser()
 # Note that for the above, the order doesn't matter, so the user can enter into the command line e.g., "-v 3" or, "--verbose 3", "3 -v" etc.
 
 
+# -------------------------------------------------------------------------------
 
 
 # ## Making the program handle multiple verbosity values!
@@ -99,18 +101,45 @@ parser = argparse.ArgumentParser()
 #     print(answer)
 
 
+# -------------------------------------------------------------------------------
 
-## Now will use verbosity levels to display *more* text, instead of just *changing* the text
+
+# ## Now will use verbosity levels to display *more* text, instead of just *changing* the text
+# parser.add_argument("x", type = int, help = "the base")
+# parser.add_argument("y", type = int, help = "the exponent")
+# parser.add_argument("-v", "--verbosity", action = "count", default = 0)
+
+# args = parser.parse_args()
+# answer = args.x ** args.y
+
+# if args.verbosity >= 2:
+#     print("Running '{}'".format(__file__))
+# if args.verbosity >= 1:
+#     print("{}^{} == ".format(args.x, args.y), end = "")
+
+# print(answer)
+
+
+# -------------------------------------------------------------------------------
+
+
+# Now, we will use 'add_mutally_exclusive_group()', which allows us to specify options that conflic with each other.
+# Will also introduce the --quiet option, which is the oppositve of --verbose
+# Note that the user cannot combint these two, as they are *mutally_exclusive*, so you cannot do both -v and -q, (or -vq, or any other combo)
+
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-v", "--verbose", action = "store_true")
+group.add_argument("-q", "--quiet", action = "store_true")
+
 parser.add_argument("x", type = int, help = "the base")
 parser.add_argument("y", type = int, help = "the exponent")
-parser.add_argument("-v", "--verbosity", action = "count", default = 0)
 
 args = parser.parse_args()
 answer = args.x ** args.y
 
-if args.verbosity >= 2:
-    print("Running '{}'".format(__file__))
-if args.verbosity >= 1:
-    print("{}^{} == ".format(args.x, args.y), end = "")
-
-print(answer)
+if args.quiet:
+    print(answer)
+elif args.verbose:
+    print("{} to the power of {} equals {}".format(args.x, args.y, answer))
+else:
+    print("{}^{} == {}".format(args.x, args.y, answer))
