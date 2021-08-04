@@ -29,8 +29,9 @@ parser.add_argument("id", type = str, help = "either the UUID or Device ID")
 
 args = parser.parse_args()
 
+
 # Function that includes both 'a' and 'b', as described earlier
-def id_converter(x):
+def id_converter(x): # where ex would be args.id (?)
     print("hi {}".format(x))
     # if it starts with (UUID):
     #     then do this crap to it to convert to Device ID
@@ -42,6 +43,18 @@ def id_converter(x):
 
 
 converter = id_converter(args.id)
+
+'''
+# Or should it be like this????
+
+if arg.uuid:
+    print()
+if args.device:
+    print()
+
+Need to refer to: 
+    - https://stackoverflow.com/questions/27529610/call-function-based-on-argparse
+'''
 
 #ACTUALLY NO, DISREGARD THESE TWO LINES BELOW
 # uuid_result = uuid_converter()
