@@ -78,3 +78,4 @@ if args.verbose:
     print("the square of {} equals {}".format(args.square, answer))
 else:
     print(answer)
+# Note that the order doesn't matter, so the user can enter into the command line e.g., "-v 3" or, "--verbose 3", "3 -v" etc.
