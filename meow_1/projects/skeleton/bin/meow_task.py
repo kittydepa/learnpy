@@ -40,13 +40,18 @@ args = parser.parse_args()
 
 # Function that includes both 'a' and 'b', as described earlier
 def id_converter(id): # where ex would be args.id (?)
+    new_id = []
     if len(id) == 36:
         print("this is a UUID.")
-    if len(id) == 26:
+        new_id = "something"
+        print(new_id)
+
+    elif len(id) == 26:
         print("This is a Device ID.")
+
     else:
         print("ERROR. Not a valid number of characters.")
-        print("Hint: you must include hyphens in between each segment the UUID or Device ID, and do no include spaces.")
+        print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
 
 
 
