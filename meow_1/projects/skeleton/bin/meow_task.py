@@ -23,35 +23,33 @@ Note about UUID and Device ID:
         - ARE case sensitive
 '''
 
-import argparse
+import argparse, sys
 
-parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag.")
-group = parser.add_mutually_exclusive_group()
-
-# Setting up the flags for the 2 functions the user can choose from, which must be mutually exclusive
-group.add_argument("-u", "--uuid", action = "store_true", help = "Convert a Device ID to a UUID")
-group.add_argument("-d", "--device", action = "store_true", help = "Convert a UUID to a Device ID")
-
-# Setting up the user input
-parser.add_argument("id", type = str, help = "either the UUID or Device ID")
-
-args = parser.parse_args()
-
-
-# Function that includes both 'a' and 'b', as described earlier
-def id_converter(id): 
+new_id = []
+def uuid_converter(): 
     new_id = []
-    if len(id) == 36:
+    if len(args.uuid) == 36:
         print("")
-        print("You entered the UUID: {}".format(id))
-        id_v2 = id.replace("-", "")
-        # print(id_v2)
+        print("You entered the UUID: {}".format(args.uuid))
+        id_v2 = args.uuid.replace("-", "")
         new_id = id_v2[10:12] + "-" + id_v2[12:18] + "-" + id_v2[18:20] + '-' + id_v2[20:26] + '-' + id_v2[26:32]
         print("Here is the Device ID: {}".format(new_id))
         print("")
 
-    elif len(id) == 26:
-        print("This is a Device ID.")
+    else:
+        print("ERROR. Not a valid number of characters.")
+        print("HINT: you must include hyphens in between each segment the of UUID or Device ID, and do not include spaces.")
+
+
+def deviceID_converter(): 
+    new_id = []
+    if len(args.deviceID) == 26:
+        print("")
+        print("You entered the Device ID: {}".format(args.deviceID))
+        id_v2 = args.deviceID.replace("-", "")
+        new_id = ("00000000") + "-" + "00" + id_v2[0:2] + "-" + id_v2[2:6] + "-" + id_v2[6:10] + "-" + id_v2[10:]
+        print("Here is the UUID: {}".format(new_id))
+        print("")
 
     else:
         print("ERROR. Not a valid number of characters.")
@@ -59,26 +57,27 @@ def id_converter(id):
 
 
 
-converter = id_converter(args.id)
+# Setting up the user input/top level parser
+parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag. Remember to put the flag first, then the ID.")
+parser.add_argument("-u", "--uuid", type = str, help = "Convert a UUID to Device ID")
+parser.add_argument("-d", "--deviceID", type = str, help = "Convert a Device ID to a UUID")
 
 
 
+# # Parse the args and call whatever function was selected
+args = parser.parse_args()
+print(args)
+# print(args.uuid)
+
+if args.uuid is None and args.deviceID is None:
+    print("NOOB - you need to enter a UUID or Device ID, with the hyphens '-'.")
+elif args.uuid is not None:
+    uuid_converter()
+elif args.deviceID is not None:
+    deviceID_converter()
+else:
+    sys.exit()
 
 
-
-
-'''
-# Or should it be like this????
-
-if arg.uuid:
-    print()
-if args.device:
-    print()
-
-Need to refer to: 
-    - https://stackoverflow.com/questions/27529610/call-function-based-on-argparse
-'''
-
-#ACTUALLY NO, DISREGARD THESE TWO LINES BELOW
-# uuid_result = uuid_converter()
-# did_result = did_convert()
+# A practice UUID: 00000000-00A9-4D19-BAF9-99123149DBE9 
+# A practice Device ID: E0-010FAB-0A-210521-00010A
