@@ -39,7 +39,7 @@ args = parser.parse_args()
 
 
 # Function that includes both 'a' and 'b', as described earlier
-def uuid_converter(id): 
+def id_converter(id): 
     new_id = []
     if len(id) == 36:
         print("")
@@ -50,17 +50,13 @@ def uuid_converter(id):
         print("Here is the Device ID: {}".format(new_id))
         print("")
 
-    else:
-        print("ERROR. Not a valid number of characters.")
-        print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
-
-def deviceID_converter(id):
-    if len(id) == 26:
+    elif len(id) == 26:
         print("This is a Device ID.")
 
     else:
         print("ERROR. Not a valid number of characters.")
         print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
+
 
 
     #print("hi {}".format(x))
@@ -73,7 +69,7 @@ def deviceID_converter(id):
     #     sys.exit() # remember to import this!
 
 
-#converter = id_converter(args.id)
+converter = id_converter(args.id)
 
 '''
 # Or should it be like this????
