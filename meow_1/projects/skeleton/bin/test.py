@@ -56,7 +56,7 @@ elif args.device:
 
 else:
     print("ERROR. Not a valid number of characters.")
-    print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
+    print("HINT: you must include hyphens in between each segment of the UUID or Device ID, and do not include spaces.")
 
 
 '''
