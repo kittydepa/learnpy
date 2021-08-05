@@ -45,9 +45,12 @@ def device_id_converter(device_id):
     new_id = []
     if len(device_id) == 26:
         print("")
-        print("You entered the Device ID: {}".format(args.deviceID))
+        print("You entered the Device ID: {}".format(args.device_id))
         id_v2 = device_id.replace("-", "")
-        new_id = ("00000000") + "-" + "00" + id_v2[0:2] + "-" + id_v2[2:6] + "-" + id_v2[6:10] + "-" + id_v2[10:]
+        id_v3 = ("0000000000") + id_v2
+        # print(id_v3)
+        # print("Length is: ", len(id_v3))
+        new_id = uuid.UUID(id_v3)
         print("Here is the UUID: {}".format(new_id))
         print("")
 
@@ -73,7 +76,7 @@ if args.uuid is None and args.device_id is None:
     print("NOOB - you need to enter a UUID or Device ID, with the dashes '-'.")
 elif args.uuid is not None:
     uuid_converter(args.uuid)
-elif args.deviceID is not None:
+elif args.device_id is not None:
     device_id_converter(args.device_id)
 else:
     sys.exit()
