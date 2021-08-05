@@ -59,17 +59,13 @@ def id_converter(id):
 
 
 
-    #print("hi {}".format(x))
-    # if it starts with (UUID):
-    #     then do this crap to it to convert to Device ID
-    # elif it starts with (Device ID):
-    #     then do this crap to it to conver to UUID
-    # else:
-    #     print()
-    #     sys.exit() # remember to import this!
-
-
 converter = id_converter(args.id)
+
+
+
+
+
+
 
 '''
 # Or should it be like this????

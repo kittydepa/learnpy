@@ -26,9 +26,9 @@ Note about UUID and Device ID:
 import argparse
 
 new_id = []
-def uuid_converter(id): 
+def uuid_converter(args): 
     new_id = []
-    if len(id) == 36:
+    if len(args) == 36:
         print("")
         print("You entered the UUID: {}".format(id))
         id_v2 = id.replace("-", "")
@@ -42,9 +42,9 @@ def uuid_converter(id):
         print("HINT: you must include hyphens in between each segment the of UUID or Device ID, and do not include spaces.")
 
 
-def deviceID_converter(id): 
+def deviceID_converter(args): 
     new_id = []
-    if len(id) == 38:
+    if len(args) == 38:
         print("")
         print("You entered the Device: {}".format(id))
         id_v2 = id.replace("-", "")
@@ -59,25 +59,36 @@ def deviceID_converter(id):
 
 
 
-
+# Setting up the user input/top level parser
 parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag.")
-group = parser.add_mutually_exclusive_group()
+parser.add_argument("--uuid", type = str, help = "UUID")
+parser.add_argument("-deviceID", type = str, help = "Device dientifiereinfeiosfj")
 
-# Setting up the flags for the 2 functions the user can choose from, which must be mutually exclusive
-group.add_argument("-u", "--uuid", action = "store_const", const = uuid_converter, help = "Convert a Device ID to a UUID")
-group.add_argument("-d", "--device", action = "store_const", const = deviceID_converter, help = "Convert a UUID to a Device ID")
+# subparsers = parser.add_subparsers(help = 'sub-command help')
 
-# Setting up the user input
-parser.add_argument("id", type = str, help = "either the UUID or Device ID")
 
+# # Create parser for the UUID converter
+# parser_uuid = subparsers.add_parser('--uuid')
+# parser_uuid.add_argument('id', type = str)
+# parser_uuid.set_defaults(func = uuid_converter)
+
+
+# # Create parser for the Device ID converter
+# parser_deviceID = subparsers.add_parser('device')
+# parser_deviceID.add_argument('id', type = str)
+# parser_deviceID.set_defaults(func = deviceID_converter)
+
+
+# # Parse the args and call whatever function was selected
 args = parser.parse_args()
-print(type(id))
+print(args)
+print(args.uuid)
 
-if args.uuid:
-    uuid_converter(id)
+if args.uuid is None and args.d is None:
+    print("NOOB")
+# args.func(args)
 
-elif args.device:
-    deviceID_converter(id)
+# # And for the other function
+# args = parser.parse_args('Device ID: id')
+# args.func(args)
 
-else:
-    print("Didn't work. Try again.")
