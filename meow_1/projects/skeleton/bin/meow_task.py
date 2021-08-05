@@ -13,6 +13,12 @@ Basically the program needs to use the argparse module to create a command line 
         - (function a = UUID to device identifer
         - (function b = device identifier to UUID)
     - include help text that briefly describes how to use the tool
+
+Note about UUID and Device ID:
+    - UUIDs are made of 32 hexidecimal values, total
+        - they have 5 segments where seg1 has 8 values, seg2: 4, seg3: 4, seg4:4, and seg5:12
+    - Device IDs are made of 22 total (- the first 10 of the UUID)
+        - also have 5 segments where seg 1 has 2 values, seg2:6, seg3:2, seg4:6, and seg5: 6
 '''
 
 import argparse
