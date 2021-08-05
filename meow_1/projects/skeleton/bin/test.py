@@ -36,44 +36,28 @@ group.add_argument("-d", "--device", action = "store_true", help = "Convert a UU
 parser.add_argument("id", type = str, help = "either the UUID or Device ID")
 
 args = parser.parse_args()
+# result = args.id
+
+    
+new_id = []
 
 
-# Function that includes both 'a' and 'b', as described earlier
-def uuid_converter(id): 
-    new_id = []
-    if len(id) == 36:
-        print("")
-        print("You entered the UUID: {}".format(id))
-        id_v2 = id.replace("-", "")
-        # print(id_v2)
-        new_id = id_v2[10:12] + "-" + id_v2[12:18] + "-" + id_v2[18:20] + '-' + id_v2[20:26] + '-' + id_v2[26:32]
-        print("Here is the Device ID: {}".format(new_id))
-        print("")
+if args.uuid:
+    print("")
+    print("You entered the UUID: {}".format(id))
+    id_v2 = id.replace("-", "")
+    # print(id_v2)
+    new_id = id_v2[10:12] + "-" + id_v2[12:18] + "-" + id_v2[18:20] + '-' + id_v2[20:26] + '-' + id_v2[26:32]
+    print("Here is the Device ID: {}".format(new_id))
+    print("")
 
-    else:
-        print("ERROR. Not a valid number of characters.")
-        print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
+elif args.device:
+    print("This is a Device ID.")
 
-def deviceID_converter(id):
-    if len(id) == 26:
-        print("This is a Device ID.")
+else:
+    print("ERROR. Not a valid number of characters.")
+    print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
 
-    else:
-        print("ERROR. Not a valid number of characters.")
-        print("HINT: you must include hyphens in between each segment the UUID or Device ID, and do not include spaces.")
-
-
-    #print("hi {}".format(x))
-    # if it starts with (UUID):
-    #     then do this crap to it to convert to Device ID
-    # elif it starts with (Device ID):
-    #     then do this crap to it to conver to UUID
-    # else:
-    #     print()
-    #     sys.exit() # remember to import this!
-
-
-#converter = id_converter(args.id)
 
 '''
 # Or should it be like this????
@@ -86,7 +70,3 @@ if args.device:
 Need to refer to: 
     - https://stackoverflow.com/questions/27529610/call-function-based-on-argparse
 '''
-
-#ACTUALLY NO, DISREGARD THESE TWO LINES BELOW
-# uuid_result = uuid_converter()
-# did_result = did_convert()
