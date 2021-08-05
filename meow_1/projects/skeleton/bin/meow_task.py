@@ -42,7 +42,7 @@ args = parser.parse_args()
 def id_converter(id): # where ex would be args.id (?)
     new_id = []
     if len(id) == 36:
-        print("this is a UUID.")
+        print("This is a UUID.")
         new_id = "something"
         print(new_id)
 
