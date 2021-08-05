@@ -26,12 +26,12 @@ Note about UUID and Device ID:
 import argparse, sys
 
 new_id = []
-def uuid_converter(): 
+def uuid_converter(uuid_): 
     new_id = []
-    if len(args.uuid) == 36:
+    if len(uuid_) == 36:
         print("")
-        print("You entered the UUID: {}".format(args.uuid))
-        id_v2 = args.uuid.replace("-", "")
+        print("You entered the UUID: {}".format(uuid_))
+        id_v2 = uuid_.replace("-", "")
         new_id = id_v2[10:12] + "-" + id_v2[12:18] + "-" + id_v2[18:20] + '-' + id_v2[20:26] + '-' + id_v2[26:32]
         print("Here is the Device ID: {}".format(new_id))
         print("")
@@ -41,12 +41,12 @@ def uuid_converter():
         print("HINT: you must include hyphens in between each segment the of UUID or Device ID, and do not include spaces.")
 
 
-def deviceID_converter(): 
+def device_id_converter(device_id): 
     new_id = []
-    if len(args.deviceID) == 26:
+    if len(device_id) == 26:
         print("")
         print("You entered the Device ID: {}".format(args.deviceID))
-        id_v2 = args.deviceID.replace("-", "")
+        id_v2 = device_id.replace("-", "")
         new_id = ("00000000") + "-" + "00" + id_v2[0:2] + "-" + id_v2[2:6] + "-" + id_v2[6:10] + "-" + id_v2[10:]
         print("Here is the UUID: {}".format(new_id))
         print("")
@@ -60,7 +60,7 @@ def deviceID_converter():
 # Setting up the user input/top level parser
 parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag. Remember to put the flag first, then the ID.")
 parser.add_argument("-u", "--uuid", type = str, help = "Convert a UUID to Device ID")
-parser.add_argument("-d", "--deviceID", type = str, help = "Convert a Device ID to a UUID")
+parser.add_argument("-d", "--device-id", type = str, help = "Convert a Device ID to a UUID")
 
 
 
@@ -69,12 +69,12 @@ args = parser.parse_args()
 print(args)
 # print(args.uuid)
 
-if args.uuid is None and args.deviceID is None:
-    print("NOOB - you need to enter a UUID or Device ID, with the hyphens '-'.")
+if args.uuid is None and args.device_id is None:
+    print("NOOB - you need to enter a UUID or Device ID, with the dashes '-'.")
 elif args.uuid is not None:
-    uuid_converter()
+    uuid_converter(args.uuid)
 elif args.deviceID is not None:
-    deviceID_converter()
+    device_id_converter(args.device_id)
 else:
     sys.exit()
 
