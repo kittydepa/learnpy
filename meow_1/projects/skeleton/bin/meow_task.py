@@ -23,7 +23,7 @@ Note about UUID and Device ID:
         - ARE case sensitive
 '''
 
-import argparse, sys
+import argparse, sys, uuid
 
 new_id = []
 def uuid_converter(uuid_): 
