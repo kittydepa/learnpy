@@ -39,12 +39,16 @@ args = parser.parse_args()
 
 
 # Function that includes both 'a' and 'b', as described earlier
-def id_converter(id): # where ex would be args.id (?)
+def id_converter(id): 
     new_id = []
     if len(id) == 36:
-        print("This is a UUID.")
-        new_id = "something"
-        print(new_id)
+        print("")
+        print("You entered the UUID: {}".format(id))
+        id_v2 = id.replace("-", "")
+        # print(id_v2)
+        new_id = id_v2[10:12] + "-" + id_v2[12:18] + "-" + id_v2[18:20] + '-' + id_v2[20:26] + '-' + id_v2[26:32]
+        print("Here is the Device ID: {}".format(new_id))
+        print("")
 
     elif len(id) == 26:
         print("This is a Device ID.")
