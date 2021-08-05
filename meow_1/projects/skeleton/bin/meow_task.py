@@ -25,7 +25,7 @@ Note about UUID and Device ID:
 
 import argparse
 
-parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag. \n By default, the program will assume the input is a UUID and convert it to a Device ID.")
+parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag.")
 group = parser.add_mutually_exclusive_group()
 
 # Setting up the flags for the 2 functions the user can choose from, which must be mutually exclusive
