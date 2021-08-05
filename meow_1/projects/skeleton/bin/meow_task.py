@@ -17,8 +17,10 @@ Basically the program needs to use the argparse module to create a command line 
 Note about UUID and Device ID:
     - UUIDs are made of 32 hexidecimal values, total
         - they have 5 segments where seg1 has 8 values, seg2: 4, seg3: 4, seg4:4, and seg5:12
+        - are NOT case sensistive
     - Device IDs are made of 22 total (- the first 10 of the UUID)
         - also have 5 segments where seg 1 has 2 values, seg2:6, seg3:2, seg4:6, and seg5: 6
+        - ARE case sensitive
 '''
 
 import argparse
@@ -37,8 +39,18 @@ args = parser.parse_args()
 
 
 # Function that includes both 'a' and 'b', as described earlier
-def id_converter(x): # where ex would be args.id (?)
-    print("hi {}".format(x))
+def id_converter(id): # where ex would be args.id (?)
+    if len(id) == 36:
+        print("this is a UUID.")
+    if len(id) == 26:
+        print("This is a Device ID.")
+    else:
+        print("ERROR. Not a valid number of characters.")
+        print("Hint: you must include hyphens in between each segment the UUID or Device ID, and do no include spaces.")
+
+
+
+    #print("hi {}".format(x))
     # if it starts with (UUID):
     #     then do this crap to it to convert to Device ID
     # elif it starts with (Device ID):
