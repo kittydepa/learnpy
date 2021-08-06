@@ -23,6 +23,8 @@ Note about UUID and Device ID:
         - ARE case sensitive
 '''
 
+
+
 import argparse, sys, uuid
 
 new_id = []
@@ -30,21 +32,19 @@ new_id = []
 
 # Function for converting a UUID to a Device ID
 def uuid_converter(uuid_):
+    # First, check if the input is a valid UUID
     def is_valid_uuid(id):
         try:
             uuid.UUID(str(id))
             return True
         except ValueError:
-            return False
-        
-    if (is_valid_uuid(uuid_)) == False:
-        #raise Exception("Not a valid UUID!")
-        print("\nERROR: Not a valid UUID!")
-        print("\nHINT: Valid UUIDs must be 32 characters long. You must include hyphens in between each segment of the UUID. Valid UUIDs must follow a specific character structure as well.")
-        print("\nDid you mean to convert a Device ID to a UUID? If so, use the -d flag instead.\n")
+            print("\nERROR: Not a valid UUID!")
+            print("HINT: Valid UUIDs must be 32 characters long. You must include hyphens in between each segment of the UUID. Valid UUIDs must follow a specific character structure as well. Did you mean to convert a Device ID to a UUID? If so, use the -d flag instead.\n")
+            sys.exit()
 
-        sys.exit()
-    
+
+    is_valid_uuid(uuid_)
+
 
     if len(uuid_) == 36:
         print("")
