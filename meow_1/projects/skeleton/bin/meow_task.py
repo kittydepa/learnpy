@@ -62,7 +62,7 @@ def device_id_converter(device_id):
         print("")
     except:
         print("\nERROR: Not a valid number of characters.")
-        print("HINT: Valid Device IDs must be 26 characters long, and must not include spaces.")
+        print("HINT: Valid Device IDs must be 26 characters long, and must not include spaces or dashes.")
         print("Did you mean to convert a UUID to a Device ID? If so, use the -u flag instead.\n")
         sys.exit()
 
