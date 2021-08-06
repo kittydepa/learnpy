@@ -27,8 +27,6 @@ Note about UUID and Device ID:
 
 import argparse, sys, uuid
 
-new_id = []
-
 
 # Function for converting a UUID to a Device ID
 def uuid_converter(uuid_):
