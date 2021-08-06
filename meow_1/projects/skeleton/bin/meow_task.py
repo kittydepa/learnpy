@@ -36,7 +36,9 @@ def uuid_converter(uuid_):
             print("\nERROR: Not a valid UUID!")
             print("HINT: Valid UUIDs must be 32 characters long. You must include hyphens in between each segment of the UUID. Valid UUIDs must follow a specific character structure as well. Did you mean to convert a Device ID to a UUID? If so, use the -d flag instead.\n")
             sys.exit()
+
     is_valid_uuid(uuid_)
+    
     if len(uuid_) == 36:
         print("")
         print("You entered the UUID: {}".format(uuid_))
@@ -87,6 +89,6 @@ elif args.device_id is not None:
     device_id_converter(args.device_id)
 else:
     sys.exit()
-    
+
 # A practice UUID: 00000000-00A9-4D19-BAF9-99123149DBE9
 # A practice Device ID: E0-010FAB-0A-210521-00010A
