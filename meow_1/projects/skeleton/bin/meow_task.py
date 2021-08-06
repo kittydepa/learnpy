@@ -49,19 +49,8 @@ def uuid_converter(uuid_):
 
 
 def device_id_converter(device_id):
-    # Check if it is a valid device ID
-    def is_valid_device_id(device_id):
-        try:
-            len(device_id) == 26
-            return True
-        except ValueError:
-            print("\nERROR: Not a valid number of characters.")
-            print("\nHINT: Valid Device IDs must be 26 characters long, and must not include spaces.")
-            print("\nDid you mean to convert a UUID to a Device ID? If so, use the -u flag instead.\n")
-    
-    is_valid_device_id(device_id)
-
-    if is_valid_device_id(device_id) == True:
+    try:
+        len(device_id) == 26
         print("")
         print("You entered the Device ID: {}".format(args.device_id))
         id_v2 = device_id.replace("-", "")
@@ -71,7 +60,12 @@ def device_id_converter(device_id):
         new_id = uuid.UUID(id_v3)
         print("Here is the UUID: {}".format(new_id))
         print("")
-  
+    except:
+        print("\nERROR: Not a valid number of characters.")
+        print("HINT: Valid Device IDs must be 26 characters long, and must not include spaces.")
+        print("Did you mean to convert a UUID to a Device ID? If so, use the -u flag instead.\n")
+        sys.exit()
+
         
 # Setting up the user input/top level parser
 parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag. Remember to put the flag first, then the ID.")
