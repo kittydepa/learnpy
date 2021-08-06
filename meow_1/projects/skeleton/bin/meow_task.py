@@ -40,26 +40,20 @@ def uuid_converter(uuid_):
     is_valid_uuid(uuid_)
     
     if len(uuid_) == 36:
-        print("")
-        print("You entered the UUID: {}".format(uuid_))
         id_v2 = uuid_.replace("-", "")
         new_id = id_v2[10:12] + "-" + id_v2[12:18] + "-" + id_v2[18:20] + '-' + id_v2[20:26] + '-' + id_v2[26:32]
-        print("Here is the Device ID: {}".format(new_id))
-        print("")
+        print(new_id)
 
 
 def device_id_converter(device_id):
     try:
         len(device_id) == 26
-        print("")
-        print("You entered the Device ID: {}".format(args.device_id))
         id_v2 = device_id.replace("-", "")
         id_v3 = ("0000000000") + id_v2
         # print(id_v3)
         # print("Length is: ", len(id_v3))
         new_id = uuid.UUID(id_v3)
-        print("Here is the UUID: {}".format(new_id))
-        print("")
+        print(new_id)
     except:
         print("\nERROR: Not a valid number of characters.")
         print("HINT: Valid Device IDs must be 26 characters long, and must not include spaces or dashes.")
