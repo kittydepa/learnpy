@@ -22,9 +22,6 @@ Note about UUID and Device ID:
         - also have 5 segments where seg 1 has 2 values, seg2:6, seg3:2, seg4:6, and seg5: 6
         - ARE case sensitive
 '''
-
-
-
 import argparse, sys, uuid
 
 
@@ -39,11 +36,7 @@ def uuid_converter(uuid_):
             print("\nERROR: Not a valid UUID!")
             print("HINT: Valid UUIDs must be 32 characters long. You must include hyphens in between each segment of the UUID. Valid UUIDs must follow a specific character structure as well. Did you mean to convert a Device ID to a UUID? If so, use the -d flag instead.\n")
             sys.exit()
-
-
     is_valid_uuid(uuid_)
-
-
     if len(uuid_) == 36:
         print("")
         print("You entered the UUID: {}".format(uuid_))
@@ -58,8 +51,7 @@ def uuid_converter(uuid_):
     #     print("Did you mean to convert a Device ID to a UUID? If so, use the -d flag instead.")
 
 
-
-def device_id_converter(device_id): 
+def device_id_converter(device_id):
     new_id = []
     if len(device_id) == 26:
         print("")
@@ -70,15 +62,12 @@ def device_id_converter(device_id):
         # print("Length is: ", len(id_v3))
         new_id = uuid.UUID(id_v3)
         print("Here is the UUID: {}".format(new_id))
-        #print(type(new_id)) # foupl
         print("")
 
     else:
         print("\nERROR: Not a valid number of characters.")
         print("\nHINT: Valid Device IDs must be 26 characters long, and must not include spaces.")
         print("\nDid you mean to convert a UUID to a Device ID? If so, use the -u flag instead.\n")
-
-
 
 # Setting up the user input/top level parser
 parser = argparse.ArgumentParser(description = "Convert a UUID to device identifier or specify to convert the other way around, with the desired output format indicated by the flag. Remember to put the flag first, then the ID.")
@@ -98,8 +87,6 @@ elif args.device_id is not None:
     device_id_converter(args.device_id)
 else:
     sys.exit()
-
-
-
-# A practice UUID: 00000000-00A9-4D19-BAF9-99123149DBE9 
+    
+# A practice UUID: 00000000-00A9-4D19-BAF9-99123149DBE9
 # A practice Device ID: E0-010FAB-0A-210521-00010A
