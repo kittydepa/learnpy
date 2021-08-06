@@ -26,6 +26,9 @@ Note about UUID and Device ID:
 import argparse, sys, uuid
 
 new_id = []
+
+
+# Function for converting a UUID to a Device ID
 def uuid_converter(uuid_):
     def is_valid_uuid(id):
         try:
@@ -33,7 +36,14 @@ def uuid_converter(uuid_):
             return True
         except ValueError:
             return False
-    #print(is_valid_uuid(uuid_))
+        
+    if (is_valid_uuid(uuid_)) == False:
+        #raise Exception("Not a valid UUID!")
+        print("\nERROR: Not a valid UUID!")
+        print("\nHINT: Valid UUIDs must be 32 characters long. You must include hyphens in between each segment of the UUID. Valid UUIDs must follow a specific character structure as well.")
+        print("\nDid you mean to convert a Device ID to a UUID? If so, use the -d flag instead.\n")
+
+        sys.exit()
     
 
     if len(uuid_) == 36:
@@ -44,9 +54,10 @@ def uuid_converter(uuid_):
         print("Here is the Device ID: {}".format(new_id))
         print("")
 
-    else:
-        print("ERROR: Not a valid UUID!")
-        print("HINT: Valid UUIDs should be 32 characters long.")
+    # else:
+    #     print("ERROR: Not a valid UUID!")
+    #     print("HINT: Valid UUIDs must be 32 characters long. You must include hyphens in between each segment of the UUID.")
+    #     print("Did you mean to convert a Device ID to a UUID? If so, use the -d flag instead.")
 
 
 
@@ -61,11 +72,13 @@ def device_id_converter(device_id):
         # print("Length is: ", len(id_v3))
         new_id = uuid.UUID(id_v3)
         print("Here is the UUID: {}".format(new_id))
+        #print(type(new_id)) # foupl
         print("")
 
     else:
-        print("ERROR. Not a valid number of characters.")
-        print("HINT: you must include hyphens in between each segment the of UUID or Device ID, and do not include spaces.")
+        print("\nERROR: Not a valid number of characters.")
+        print("\nHINT: Valid Device IDs must be 26 characters long, and must not include spaces.")
+        print("\nDid you mean to convert a UUID to a Device ID? If so, use the -u flag instead.\n")
 
 
 
@@ -76,7 +89,7 @@ parser.add_argument("-d", "--device-id", type = str, help = "Convert a Device ID
 
 # # Parse the args and call whatever function was selected
 args = parser.parse_args()
-print(args)
+# print(args)
 # print(args.uuid)
 
 if args.uuid is None and args.device_id is None:
