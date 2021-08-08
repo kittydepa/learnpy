@@ -3,7 +3,8 @@
 // https://docs.diesel.rs/1.4.x/uuid/struct.Uuid.html
 // https://mozilla.github.io/mentat/apis/latest/rust/mentat/struct.Uuid.html
 
-// About command line arguments in Rust: https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html
+// About command line arguments in Rust, see ch. 12:
+// https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html
 
 
 
@@ -28,9 +29,14 @@ use std::env;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let query = &args[1]; // Since the file name, which user does not need to write, takes up args[0]
-    let filename = &args[2];
+    let query = parse_config(&args); // Since the file name, which user does not need to write, takes up args[0]
+    //let filename = &args[2];
 
     println!("Searching for {}", query);
-    println!("In file {}", filename);
+    //println!("In file {}", filename);
+}
+
+fn parse_config(args: &[String]) -> &str {
+    let query = &args[1];
+    query
 }
