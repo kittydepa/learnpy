@@ -45,28 +45,33 @@
 // }
 
 
-// Practice 3 - Using argparse lib from u:tailhook on 
-extern crate argparse;
+// // Practice 3 - Using argparse lib from u:tailhook on 
+// extern crate argparse;
 
-use argparse::{ArgumentParser, StoreTrue, Store};
+// use argparse::{ArgumentParser, StoreTrue, Store};
 
+// fn main() {
+//     let mut verbose = false;
+//     let mut name = "World".to_string();
+//    {
+//        let mut ap = ArgumentParser::new();
+//        ap.set_description("Greet someone.");
+//        ap.refer(&mut verbose)
+//            .add_option(&["-v", "--verbose"], StoreTrue,
+//             "Be verbose");
+//        ap.refer(&mut name)
+//            .add_option(&["--name"], Store,
+//         "Name for the greeting");
+//        ap.parse_args_or_exit();
+//    }
+
+//    if verbose {
+//        println!("name is {}", name);
+//    }
+//    println!("Hello {}!", name);
+// }
+
+// Practice 4
 fn main() {
-    let mut verbose = false;
-    let mut name = "World".to_string();
-   {
-       let mut ap = ArgumentParser::new();
-       ap.set_description("Greet someone.");
-       ap.refer(&mut verbose)
-           .add_option(&["-v", "--verbose"], StoreTrue,
-            "Be verbose");
-       ap.refer(&mut name)
-           .add_option(&["--name"], Store,
-        "Name for the greeting");
-       ap.parse_args_or_exit();
-   }
-
-   if verbose {
-       println!("name is {}", name);
-   }
-   println!("Hello {}!", name);
+    
 }
