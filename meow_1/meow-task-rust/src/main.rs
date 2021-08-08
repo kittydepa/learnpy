@@ -3,6 +3,9 @@
 // https://docs.diesel.rs/1.4.x/uuid/struct.Uuid.html
 // https://mozilla.github.io/mentat/apis/latest/rust/mentat/struct.Uuid.html
 
+// About command line arguments in Rust: https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html
+
+
 
 
 use uuid::Uuid;
@@ -12,3 +15,8 @@ fn main() -> Result<(), uuid::Error> {
     println!("{}", my_uuid.to_urn());
     Ok(())
 }
+
+// impl Uuid {
+//     pub fn parse_str(input: &str) -> Result<Uuid, Error>
+    
+// }
