@@ -4,6 +4,17 @@
 // Below is an example from StackOverflow: https://stackoverflow.com/questions/26478558/working-with-uuid-in-rust
 use uuid::Uuid; 
 
+
+fn uuid_converter() {
+    // if....then:
+    //
+}
+
+fn device_id_converter() {
+    // if... then:
+    //
+}
+
 fn show_uuid(uuid: &Uuid) {
     //println!("bytes: {:?}", uuid.as_bytes());
     //println!("simple: {}", uuid.to_simple());
