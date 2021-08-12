@@ -5,10 +5,10 @@
 use uuid::Uuid; 
 
 fn show_uuid(uuid: &Uuid) {
-    println!("bytes: {:?}", uuid.as_bytes());
-    println!("simple: {}", uuid.to_simple());
-    println!("hyphenated: {}", uuid.to_hyphenated());
-    println!("urn: {}", uuid.to_urn());
+    //println!("bytes: {:?}", uuid.as_bytes());
+    //println!("simple: {}", uuid.to_simple());
+    println!("UUID: {}", uuid.to_hyphenated());
+    //println!("urn: {}", uuid.to_urn());
 }
 
 fn main() {
