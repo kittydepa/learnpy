@@ -21,3 +21,8 @@ fn main() {
     show_uuid(&uuid);
 }
 
+
+//  Take in command line input for the device ID/user ID, and it should be able to detect which one...
+//      - if statements (if type == uuid.v4, if device ID is ___ characters long )
+//      - using the UUID package for UUID data type, and clasp for command line/argparse
+//  Write a function that converts UUID to Device ID, and vice versa
