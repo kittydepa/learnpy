@@ -62,3 +62,6 @@ for rt in risetimes:
     time = datetime.fromtimestamp(rt)
     times.append(time)
     print(time)
+
+
+# Here's a list of free public APIs https://github.com/public-apis/public-apis
