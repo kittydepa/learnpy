@@ -43,4 +43,22 @@ parameters = {
 
 response = requests.get("http://api.open-notify.org/iss-pass.json", params = parameters)
 
-jprint(response.json())
+#jprint(response.json())
+
+## Extract the pass times
+pass_times = response.json()['response']
+#jprint(pass_times)
+
+## Not use a fore loop to extract just the 5 risetime values
+risetimes = []
+for d in pass_times:
+    time = d['risetime']
+    risetimes.append(time)
+#print(risetimes) # These are in epoch time stamp. Convert them to something more readble
+
+from datetime import datetime
+times = []
+for rt in risetimes:
+    time = datetime.fromtimestamp(rt)
+    times.append(time)
+    print(time)
