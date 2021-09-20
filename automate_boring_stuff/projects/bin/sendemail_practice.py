@@ -4,8 +4,8 @@ Note: This example will not work, as the emails and passwords are just placehold
 """
 
 import smtplib
-smtpObj = smtplib.SMTP('smtp.example.com', 587)
-smtpObj.ehlo()
+smtpObj = smtplib.SMTP('smtp.example.com', 587) # The name of the domain for the email service you use, and the port number (usually 587, but might be 465 otherwise)
+smtpObj.ehlo() # This says "hello" to the email server. Need to do this to make sure you established a connection to the server
 
 smtpObj.starttls()
 smtpObj.login('bob@example.com', 'my_secret_password')
