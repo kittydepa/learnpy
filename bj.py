@@ -15,20 +15,20 @@ random.shuffle(deck)
 
 
 print('********************************************************** \n Welcome to the game Casino - BLACK JACK ! \n**********************************************************')
-time.sleep(2)
+time.sleep(1)
 print('So Finally You Are Here To Accept Your Fate')
-time.sleep(2)
+time.sleep(0.5)
 print('I Mean Your Fortune')
-time.sleep(2)
+time.sleep(1)
 print('Lets Check How Lucky You Are  Wish You All The Best')
-time.sleep(2)
+time.sleep(0.5)
 print('Loading---')
-time.sleep(2)
+time.sleep(0.5)
 
 print('Still Loading---')
-time.sleep(2)
+time.sleep(0.5)
 print('So You Are Still Here Not Gone I Gave You Chance But No Problem May Be You Trust Your Fortune A Lot \n Lets Begin Then')
-time.sleep(2)
+time.sleep(0.5)
 d_cards = []  # Initialising dealer's cards
 p_cards = []  # Initialising player's cards
 time.sleep(2)
@@ -70,6 +70,7 @@ def dealer_choice():
             d_cards.append(deck.pop())
 
     print("Dealer has total " + str(sum(d_cards)) + "with the cards ", d_cards)
+    print("Your card total is = " + p_cards)
 
     if sum(p_cards) == sum(d_cards):
         print("***************The match is tie !!****************")
