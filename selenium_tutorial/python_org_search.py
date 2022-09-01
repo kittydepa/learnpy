@@ -1,3 +1,14 @@
+'''
+2.1 Simple Usage from Selenium's Getting Started page https://selenium-python.readthedocs.io/getting-started.html
+
+To make this work:
+- Install Selenium :)
+- Install Chrome driver
+- Allow chromedriver permission to be able to launch this script
+
+'''
+
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
